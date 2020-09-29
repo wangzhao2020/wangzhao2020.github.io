@@ -83,12 +83,13 @@
   </dl>
   <hr>
 
-  <!-- <h3>bing搜索</h3>
-  <form action="https://cn.bing.com/search">
-    <input type="text" placeholder="请输入想要搜索的内容">
+  <h3>bing搜索</h3>
+  google打不开，用bing代替
+  <form target="_blank" action="https://cn.bing.com/search">
+    <input type="text" name=q>
+    <button>bing一下</button>
+  </form>
 
-    <button>在新窗口打开搜索结果</button>
-  </form> -->
   <hr>
   <p>个人信息调查表</p>
   <form>
@@ -114,36 +115,119 @@
       <dt>生辰</dt>
       <dd><input type="time"></dd>
     </dl>
+
+
+
     <!-- <dl>
       <dt>照片,还未讲，暂时不做</dt>
       <dd></dd>
     </dl> -->
+
+
+
     <dl>
       <dt>肤色</dt>
       <dd><input type="color"></dd>
     </dl>
-    <!-- <dl>
-      <dt>自我介绍，还未讲，暂时不做</dt>
-    </dl> -->
-    <!-- <dl>
-      <dt>这里面的全都禁用了，还未讲，暂时不做</dt>
-    </dl> -->
-    <!-- <dl>
-      <dt>货品列表，还未讲，暂时不做</dt>
-    </dl> -->
+
+    <dl>
+      <dt>自我介绍</dt>
+      <dd>
+        <textarea name="" id="" cols="30" rows="10">&lt;/textarea>
+        </textarea>
+      </dd>
+    </dl>
+
+
+
+    <form action="">
+      <fieldset disabled>
+        <legend>这里面的全都禁用了</legend>
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+      </fieldset>
+      <button type="submit">提交</button>
+      <button type="reset">重置</button>
+
+
+
+
+    </form>
+
+
+
+
+
+
+
+
+    <table border="1">
+      <caption>货品列表</caption>
+      <col>
+      <col bgcolor="red">
+      <thead>
+        <tr>
+          <th>编号</th>
+          <th>品名</th>
+          <th>进价</th>
+          <th>出价</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>001</th>
+          <td>苹果</td>
+          <td rowspan="2">5</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <th>001</th>
+          <td>橘子</td>
+          <td>8</td>
+
+        </tr>
+        <tr>
+          <th>001</th>
+          <td>香蕉</td>
+          <td>5</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <th>001</th>
+          <td>山竹</td>
+          <td>5</td>
+          <td>8</td>
+        </tr>
+      </tbody>
+
+    </table>
+
+
+
     <hr>
     <img src="https://drscdn.500px.org/photo/174778125/m%3D1170_k%3D1/2841ccf2a3720e8e794a6a6930f6ff2c" width="300"
       height="450" usemap="#map1" title="image title">
     <map name="map1">
       <area title="矩形" target="_blank" href="https://www.mi.com" shape="rect" coords="55,90,200,200">
-      <area title="圆形" target="_blank" href="https://www.mi.com" shape="circle" coords="120,175,70,330,220,290">
+      <area title="圆形" target="_blank" href="https://www.mi.com" shape="circle" coords="127,250,100">
       <area title="多边形" target="_blank" href="https://www.mi.com" shape="poly" coords="">
 
     </map>
 
-    <!-- <dl>
-      <dt>点击我会在下面的frame里打开小米商场，但为什么打不开呢？还没学</dt>
-    </dl> -->
+
+
+    <hr>
+    <a target="frame1" href="https://www.mi.com">点击我会在下面的frame里打开小米商场，
+      但为什么打不开呢？</a><br>
+    <iframe width="300" height="150" src="" frameborder="1" name="frame1">
+    </iframe>
+
+
+
+
+
     <p>
       怎样&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp在这两个字之间空这么大呢？
       <br>
@@ -154,23 +238,6 @@
 
 
   </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
