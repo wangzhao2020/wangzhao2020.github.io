@@ -21,7 +21,7 @@
       color: blue;
     }
 
-
+    /* 注意focus，hover，active的顺序，三者如下顺序，各个功能才会显示正常 */
     p.a[tabindex="-1"]:focus {
       color: blue;
     }
@@ -35,31 +35,29 @@
     }
 
 
-    a:visited {
+    .a.c+div a:visited {
       color: orange;
     }
 
-
-    a:link[href*="https"] {
+    /* 未访问的用link，访问过的用visited */
+    .a.c+div a:link[href*="https"] {
       color: pink;
     }
 
-
-    [href*="@b.com"] {
-      color: blue;
+    /* 加上i可以不用区分大小写 */
+    .a.c+div a[href^="mailto:"i] {
+      color: green;
     }
 
-    [href^="tel:"] {
+    .a.c+div a[href^="tel:"i] {
       color: yellow;
     }
 
-    [href$="pdf"] {
+    .a.c+div a[href$="pdf"i] {
       font-size: 30px;
     }
 
-    [href$="PDF"] {
-      font-size: 30px;
-    }
+
 
     .a>ul>li:nth-child(4),
     .a>ul>li:nth-child(5),
@@ -68,22 +66,35 @@
       color: red
     }
 
-    .b>ul>li:nth-child(-n+25) {
+    .b>ul>li:nth-child(-n + 25) {
       color: red;
     }
 
-    .b>ul>li:nth-child(n+65) {
+    .b>ul>li:nth-child(n + 65) {
       color: green;
     }
 
-    .b>ul>li:nth-child(n+35):nth-child(-n+50) {
+    /* 且的关系需要2个伪类放在一起 */
+    .b>ul>li:nth-child(n + 35):nth-child(-n + 50) {
       color: blue;
     }
 
-    .prime>ul>li:nth-child(2n+4),
-    .prime>ul>li:nth-child(3n+6),
-    .prime>ul>li:nth-child(5n+10),
-    .prime>ul>li:nth-child(7n+6) {
+    .prime>ul>li {
+      color: green;
+    }
+
+    /* 
+    方法1
+    或的关系需要完整的语句用，连接
+    .prime>ul>li:nth-child(1),
+    .prime>ul>li:nth-child(2n + 4),
+    .prime>ul>li:nth-child(3n + 6),
+    .prime>ul>li:nth-child(5n + 10),
+    .prime>ul>li:nth-child(7n + 14) {
+      color: salmon;
+    } */
+
+    .prime>ul>li:not(:nth-child(1)):not(:nth-child(2n + 4)):not(:nth-child(3n + 6)):not(:nth-child(5n + 10)):not(:nth-child(7n + 14)) {
       color: salmon;
     }
   </style>
