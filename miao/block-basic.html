@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  /* 红色长条aaaaa,刚开始以为是margin-left进行固定，后来发现aaa不能随页面移动，发现应该是margin：auto；
+由于没有为aaaaa设计边框，没有发现该取多少px核实，加了边框后确定应该为aaaaa设置width，到底需要取多少width需要进行计算；
+加上边框后比较容易看出来如何计算，总长度1880px 减去margin640*2-600px。
+作业还有一个问题红色条与左边和上边的宽度分别为20px/20px，使用了body margin：20px可以达到效果，
+可以使用检查可以确定之前红色长条周围全部为body的margin 8px,因此设置body的margin为20px即可解决问题 */
+  body {
+    margin: 20px;
+  }
+
+  /* min-width设置后可以让红色长条拉伸变窄时右边可以紧挨着浏览器，
+使用的原理是当margin-left 不能为负，当空间不够时只能从右边超出；
+建议全部代码使用浅灰色背景，可以更直观的看出每个块级元素的变化，
+分析时将不同块级元素进行分离，并思考每个块级元素的变化*/
+  section {
+    min-width: 600px;
+    background: red;
+  }
+
+  section div {
+    margin: auto;
+    width: 600px;
+  }
+
+  /* 红色长条方法2，不属于常规用法
+body{
+  margin： 20px;
+}
+div {
+  margin: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 12px;
+  background-color: red;
+  width: 603px;
+  padding: 0 calc(50% - 169px);
+} */
+
+
+  /* 分析的过程：
+  1.确定main的边框、宽度、margin(up/bottom/left/right)、padding、
+  box-siznig(这个需要根据宽度确定) ;
+  max-width设置了最大宽度，在浏览器小于这个页面时会自动收缩，
+  如果不设置，宽度不会改变也不会随页面进行收缩*/
+  main {
+    border: 2px solid black;
+    width: 600px;
+    margin: auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-bottom: 70px;
+  }
+
+  /* 紫色条，主要是焦点和margin调整 */
+  main div {
+    background: violet;
+    height: 50px;
+  }
+
+  main div:hover {
+    background: violet;
+    height: 50px;
+    padding: 0px;
+    margin: 0 -10px;
+  }
+
+  /* height 需要根据实际情况进行调整 */
+  main p {
+    height: 4em;
+    overflow: auto;
+  }
+
+
+
+
+
+
+  /* 制作三角形，刚开始没有做好定位出了问题，注意定位，
+  自己用的class进行定位，老师直接用的body+div，感觉HTML的结构可以
+  选择更好的。 
+  透明用rgba(0, 0, 0, 0)或者transparent。
+  border-width：0 50px 50px 50px 0表示对应的边框宽度为0
+  这个HTML的结构也好，margin和width可以直接继承，之前自己写的比较混乱*/
+
+  body>div {
+    margin: auto;
+    width: 0px;
+    border: 50px solid;
+    border-color: transparent transparent orange transparent;
+    border-width: 0 50px 50px 50px;
+  }
+
+  body>div+div {
+
+    border: 50px solid;
+    border-color: orange transparent transparent;
+  }
+</style>
+
+<body>
+  <section>
+    <div>aaaaa</div>
+  </section>
+  <main>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium unde sequi facilis quisquam hic provident,
+      ea dignissimos temporibus labore quia voluptatibus maxime. Quibusdam est quis, recusandae modi cumque non ullam.
+    </p>
+    <div></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus quod voluptates doloremque maxime accusantium
+      sunt soluta magni incidunt rem consequatur, dicta provident atque eum vel illum consectetur aspernatur eaque
+      eligendi!</p>
+  </main>
+  <div>
+  </div>
+  <div>
+  </div>
+
+</body>
+
+</html>
