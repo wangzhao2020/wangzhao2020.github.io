@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<style>
+  * {
+    background-color:
+      rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 1px red;
+    ;
+  }
+
+  html {
+    zoom: 2;
+  }
+
+
+  .menu {
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu li {
+    list-style-type: none;
+    padding: 0;
+    top: 0;
+    width: auto;
+    box-sizing: border-box;
+  }
+
+  .menu>li {
+    display: inline-block;
+
+  }
+
+
+  ul ul {
+    position: absolute;
+    padding: 0;
+    display: none;
+    padding: 0;
+  }
+
+  ul ul li {
+    position: relative;
+  }
+
+  ul ul ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+  }
+
+
+  .menu li:hover>ul {
+    display: block;
+  }
+
+  li:hover {
+    background-color: gold;
+  }
+</style>
+
+
+<body>
+  <ul class="menu">
+    <li>Lorem.
+      <ul>
+        <li>Lorem.
+          <ul>
+            <li>0001
+              <ul>
+                <li>0001</li>
+                <li>0002</li>
+                <li>0003</li>
+                <li>0004</li>
+              </ul>
+
+            </li>
+            <li>0002
+              <ul>
+                <li>0001</li>
+                <li>0002</li>
+                <li>0003</li>
+                <li>0004</li>
+              </ul>
+            </li>
+            <li>0003
+              <ul>
+                <li>0001</li>
+                <li>0002</li>
+                <li>0003</li>
+                <li>0004</li>
+              </ul>
+            </li>
+            <li>0004
+              <ul>
+                <li>0001</li>
+                <li>0002</li>
+                <li>0003</li>
+                <li>0004</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Molestiae.
+          <ul>
+            <li>0001
+              <ul>
+                <li>0001</li>
+                <li>0002</li>
+                <li>0003</li>
+                <li>0004</li>
+              </ul>
+
+            </li>
+            <li>0002
+              <ul>
+                <li>0001</li>
+                <li>0002</li>
+                <li>0003</li>
+                <li>0004</li>
+              </ul>
+            </li>
+            <li>0003
+              <ul>
+                <li>0001</li>
+                <li>0002</li>
+                <li>0003</li>
+                <li>0004</li>
+              </ul>
+            </li>
+            <li>0004
+              <ul>
+                <li>0001</li>
+                <li>0002</li>
+                <li>0003</li>
+                <li>0004</li>
+              </ul>
+            </li>
+            <li>0002</li>
+            <li>0003</li>
+            <li>0004</li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>0001</li>
+            <li>0002</li>
+            <li>0003</li>
+            <li>0004</li>
+          </ul>
+
+        </li>
+        <li>Error!
+          <ul>
+            <li>0001</li>
+            <li>0002</li>
+            <li>0003</li>
+            <li>0004</li>
+          </ul>
+
+        </li>
+        <li>Possimus?
+          <ul>
+            <li>0001</li>
+            <li>0002</li>
+            <li>0003</li>
+            <li>0004</li>
+          </ul>
+        </li>
+        <li>Veniam.
+          <ul>
+            <li>0001</li>
+            <li>0002</li>
+            <li>0003</li>
+            <li>0004</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Ducimus.
+      <ul>
+        <li>Lorem.
+          <ul>
+            <li>0001</li>
+            <li>0002</li>
+            <li>0003</li>
+            <li>0004</li>
+          </ul>
+
+        </li>
+        <li>Molestiae.
+          <ul>
+            <li>0001</li>
+            <li>0002</li>
+            <li>0003</li>
+            <li>0004</li>
+          </ul>
+
+        </li>
+        <li>Error?
+          <ul>
+            <li>0001</li>
+            <li>0002</li>
+            <li>0003</li>
+            <li>0004</li>
+          </ul>
+
+        </li>
+        <li>Error!
+          <ul>
+            <li>0001</li>
+            <li>0002</li>
+            <li>0003</li>
+            <li>0004</li>
+          </ul>
+        </li>
+        <li>Possimus?</li>
+        <li>Veniam.</li>
+      </ul>
+    </li>
+    <li>Facilis?
+      <ul>
+        <li>Lorem.</li>
+        <li>Molestiae.</li>
+        <li>Error?</li>
+        <li>Error!</li>
+        <li>Possimus?</li>
+        <li>Veniam.</li>
+      </ul>
+    </li>
+    <li>Ducimus.
+      <ul>
+        <li>Lorem.</li>
+        <li>Molestiae.</li>
+        <li>Error?</li>
+        <li>Error!</li>
+        <li>Possimus?</li>
+        <li>Veniam.</li>
+      </ul>
+    </li>
+    <li>Est!
+      <ul>
+        <li>Lorem.</li>
+        <li>Molestiae.</li>
+        <li>Error?</li>
+        <li>Error!</li>
+        <li>Possimus?</li>
+        <li>Veniam.</li>
+      </ul>
+
+    </li>
+    <li>Magni!
+      <ul>
+        <li>Lorem.</li>
+        <li>Molestiae.</li>
+        <li>Error?</li>
+        <li>Error!</li>
+        <li>Possimus?</li>
+        <li>Veniam.</li>
+      </ul>
+    </li>
+  </ul>
+</body>
+
+</html>
