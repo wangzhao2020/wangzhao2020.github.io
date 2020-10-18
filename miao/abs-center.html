@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+
+<style>
+  * {
+    background-color:
+      rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 1px red;
+    ;
+  }
+
+  html {
+    zoom: 2;
+  }
+
+  /*a只能做到父元素比子元素小，水平方向不行（margin-left不会被计算为负值），垂直方向可以*/
+  .a {
+    width: 300px;
+    height: 300px;
+    position: relative;
+  }
+
+  .a div {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 40%;
+    margin: auto;
+    position: absolute;
+  }
+
+  /*高度需要确定，文字可以自动居中，每种情况根据实际需要取使用 */
+  .b {
+    width: 200px;
+    height: 300px;
+    display: table-cell;
+    vertical-align: middle;
+
+  }
+
+  .b div {
+
+    width: 50%;
+    margin: auto;
+  }
+
+
+  /*第三种使用行内元素居中*/
+  .c {
+    width: 200px;
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+  }
+
+  .c div {
+    vertical-align: middle;
+    line-height: normal;
+    display: inline-block;
+    width: 50%;
+  }
+</style>
+
+<body>
+  <section class="a">
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+  </section>
+
+  <section class="b">
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, totam.</div>
+  </section>
+
+
+</body>
+
+</html>
