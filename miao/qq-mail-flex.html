@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<style>
+  * {
+    xbackground-color:
+      rgba(0, 0, 0, 0.1);
+    xbox-shadow: 0 0 1px red;
+    ;
+  }
+
+  html {
+    zoom: 2;
+  }
+
+  html,
+  body {
+    margin: 0;
+    height: 100%;
+  }
+
+  section {
+    display: flex;
+    height: 100%;
+    flex-flow: wrap;
+  }
+
+  header {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(105, 109, 112);
+    color: white;
+    line-height: 65px;
+  }
+
+  aside {
+    width: 100px;
+    height: calc(100% - 50px);
+    border: 1px solid;
+  }
+
+  main {
+
+    border: 1px solid;
+    height: calc(100% - 50px);
+    width: calc(100% - 104px);
+    overflow: auto;
+
+  }
+</style>
+<!-- 所有元素都是兄弟元素 -->
+
+<body>
+  <section>
+    <header>mailQQ邮箱</header>
+    <aside>收件箱</aside>
+    <main>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint eveniet blanditiis fugiat itaque autem!
+      Veritatis temporibus dicta rerum similique accusantium molestias ut sapiente provident? Nesciunt, nam eum.
+      Laudantium, natus, eaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint eveniet blanditiis fugiat
+      itaque autem! Veritatis temporibus dicta rerum similique accusantium molestias ut sapiente provident? Nesciunt,
+      nam eum. Laudantium, natus, eaque.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint eveniet blanditiis fugiat itaque autem! Veritatis
+      temporibus dicta rerum similique accusantium molestias ut sapiente provident? Nesciunt, nam eum. Laudantium,
+      natus, eaque.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint eveniet blanditiis fugiat itaque
+      autem!
+      Veritatis temporibus dicta rerum similique accusantium molestias ut sapiente provident? Nesciunt, nam eum.
+      Laudantium, natus, eaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint eveniet blanditiis fugiat
+      itaque autem! Veritatis temporibus dicta rerum similique accusantium molestias ut sapiente provident? Nesciunt,
+      nam eum. Laudantium, natus, eaque.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint eveniet blanditiis fugiat itaque autem! Veritatis
+      temporibus dicta rerum similique accusantium molestias ut sapiente provident? Nesciunt, nam eum. Laudantium,
+      natus, eaque. </main>
+  </section>
+  <br>
+</body>
+
+</html>
+
+
+
+
+<!-- 元素包括父元素和兄弟元素
+使用flow-grow如果字体很多会影响元素的格局，改用calc设置宽度 -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+
+<style>
+  * {
+    background-color:
+      xrgba(0, 0, 0, 0.1);
+    xbox-shadow: 0 0 1px red;
+    ;
+  }
+
+  html {
+    zoom: 2;
+  }
+
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  .section {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  .header {
+    height: 60px;
+    width: 100%;
+    line-height: 55px;
+    background-color: rgb(105, 109, 112);
+    ;
+  }
+
+  .main {
+    display: flex;
+    flex-flow: row;
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
+
+  }
+
+  .aside {
+    width: 60px;
+    height: 100%;
+    border: 1px solid;
+  }
+
+  .content {
+    width: calc(100% - 64px);
+    height: 100%;
+    border: 1px solid;
+    overflow: auto;
+  }
+</style>
+
+<body>
+  <section1 class="section">
+    <div class="header">mailqq邮箱</div>
+    <div class="main">
+      <div class="aside">收件箱</div>
+      <div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quo quibusdam consequuntur,
+        est voluptates cupiditate rerum quidem ratione quasi commodi laborum, ipsam natus nisi officia optio rem labore
+        eligendi quis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quo quibusdam consequuntur, est
+        voluptates cupiditate rerum quidem ratione quasi commodi laborum, ipsam natus nisi officia optio rem labore
+        eligendi quis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quo quibusdam consequuntur, est
+        voluptates cupiditate rerum quidem ratione quasi commodi laborum, ipsam natus nisi officia optio rem labore
+        eligendi quis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quo quibusdam consequuntur, est
+        voluptates cupiditate rerum quidem ratione quasi commodi laborum, ipsam natus nisi officia optio rem labore
+        eligendi quis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quo quibusdam consequuntur,
+        est voluptates cupiditate rerum quidem ratione quasi commodi laborum, ipsam natus nisi officia optio rem labore
+        eligendi quis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quo quibusdam consequuntur, est
+        voluptates cupiditate rerum quidem ratione quasi commodi laborum, ipsam natus nisi officia optio rem labore
+        eligendi quis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quo quibusdam consequuntur, est
+        voluptates cupiditate rerum quidem ratione quasi commodi laborum, ipsam natus nisi officia optio rem labore
+        eligendi quis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quo quibusdam consequuntur, est
+        voluptates cupiditate rerum quidem ratione quasi commodi laborum, ipsam natus nisi officia optio rem labore
+        eligendi quis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quo quibusdam consequuntur,
+        est voluptates cupiditate rerum quidem ratione quasi commodi laborum, ipsam natus nisi officia optio rem labore
+        eligendi quis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quo quibusdam consequuntur, est
+        voluptates cupiditate rerum quidem ratione quasi commodi laborum, ipsam natus nisi officia optio rem labore
+        eligendi quis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quo quibusdam consequuntur, est
+        voluptates cupiditate rerum quidem ratione quasi commodi laborum, ipsam natus nisi officia optio rem labore
+        eligendi quis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quo quibusdam consequuntur, est
+        voluptates cupiditate rerum quidem ratione quasi commodi laborum, ipsam natus nisi officia optio rem labore
+        eligendi quis.</div>
+    </div>
+
+    </section>
+
+</body>
+
+</html>

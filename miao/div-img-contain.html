@@ -6,7 +6,19 @@
   <meta name="viewport" content="width=device-width">
   <title>JS Bin</title>
 </head>
+
 <style>
+  * {
+    background-color:
+      rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 1px red;
+    ;
+  }
+
+  html {
+    zoom: 2;
+  }
+
   * {
     background-color:
       rgba(0, 0, 0, 0.1);
@@ -29,12 +41,18 @@
 
   }
 
+
+
+
+  /* 方法一 */
   img.a {
     width: 200px;
     height: 200px;
     object-fit: contain;
   }
 
+
+  /* 方法二（方法1、方法2） */
   section {
     width: 200px;
     height: 200px;
@@ -43,8 +61,10 @@
     position: relative;
   }
 
-  /*第一种方法使用了line-height/vertical-align
-第二种使用定位的方法*/
+
+
+  /*方法1使用了line-height/vertical-align
+方法2使用定位的方法*/
   section img {
     max-width: 100%;
     max-height: 100%;
@@ -60,17 +80,22 @@
 </style>
 
 <body>
+
+  <div>背景图片</div>
+
+
+  <!-- 方法一 -->
+  <img class="a"
+    src="https://travel.12306.cn/imgs/resources/uploadfiles/images/b0c76b21-531b-4af4-a607-cf5672c72ded_product_W572_H370.jpg"
+    alt="">
+
   <section>
-    <img
+    方法二<img
       src="https://travel.12306.cn/imgs/resources/uploadfiles/images/b0c76b21-531b-4af4-a607-cf5672c72ded_product_W572_H370.jpg"
       alt="">
 
   </section>
 
-  <div></div>
-  <img class="a"
-    src="https://travel.12306.cn/imgs/resources/uploadfiles/images/b0c76b21-531b-4af4-a607-cf5672c72ded_product_W572_H370.jpg"
-    alt="">
 </body>
 
 </html>

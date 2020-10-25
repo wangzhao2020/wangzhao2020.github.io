@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<!-- 绝对定位 -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+
+<style>
+  * {
+    background-color:
+      xrgba(0, 0, 0, 0.1);
+    xbox-shadow: 0 0 1px red;
+    ;
+  }
+
+  html {
+    zoom: 2;
+  }
+
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  .section {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+  .header {
+    position: absolute;
+    height: 65px;
+    width: 100%;
+    line-height: 65px;
+    background-color: rgb(105, 109, 112);
+  }
+
+  .aside {
+    position: absolute;
+    top: 65px;
+    width: 100px;
+    height: calc(100% - 65px);
+    border: 1px solid;
+
+  }
+
+  .main {
+    position: absolute;
+    top: 65px;
+    left: 100px;
+    width: calc(100% - 100px);
+    height: calc(100% - 65px);
+    overflow: auto;
+    border: 1px solid;
+
+  }
+</style>
+
+<body>
+  <div class="section">
+    <div class="header">mailQQ邮箱</div>
+    <div class="aside">收件箱</div>
+    <div class="main">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint corporis possimus libero. Ab
+      placeat, repudiandae eaque quia deleniti non et ad pariatur. Libero repudiandae aut aspernatur tenetur maxime
+      facere eum doloribus ab sequi, nemo neque alias voluptatibus earum dolorum dicta hic. Minima dicta harum nisi,
+      consequuntur itaque magnam, illum alias enim eveniet eum veritatis officiis numquam nemo autem quia libero.
+      Distinctio quas reprehenderit magni possimus laboriosam alias, molestias assumenda praesentium officia aut nisi,
+      veniam voluptates adipisci dolorem quia error numquam esse accusamus perspiciatis dolores. Facilis nostrum magni
+      ipsam error, ipsa, iste enim nihil tenetur perferendis reiciendis aperiam recusandae amet ut ducimus sint expedita
+      excepturi. Velit harum adipisci dignissimos atque, odit accusantium asperiores dicta aut nam ut fuga similique eos
+      at id repellendus dolore fugit minus, accusamus recusandae magni sapiente, quaerat earum pariatur. Quasi rem
+      ratione, vitae expedita unde, numquam ipsum consequatur cum mollitia perferendis! Commodi nobis ipsa cum adipisci
+      beatae accusantium est enim amet maiores! Voluptatum ea, sunt atque maiores, reprehenderit ducimus optio ipsam
+      perspiciatis assumenda delectus exercitationem. Praesentium, cupiditate blanditiis. Illo soluta, nesciunt
+      molestias modi eos facilis blanditiis necessitatibus repudiandae perspiciatis quam ut facere exercitationem veniam
+      totam nemo quisquam beatae ipsam. Rerum vel placeat culpa autem maxime, omnis qui cum sequi rem doloribus natus
+      nisi beatae minus, a officia accusantium optio assumenda ipsam veniam neque asperiores dicta ducimus nihil hic. Ad
+      autem esse quia est dolor mollitia eveniet cumque explicabo eligendi porro vel, expedita tempore consequatur
+      quisquam sequi error nihil earum ipsam doloribus. Delectus et eum magnam fuga autem provident nesciunt adipisci
+      suscipit similique eligendi repudiandae qui eaque perspiciatis laborum, iste quisquam animi rem at error nemo
+      consequuntur in commodi sit. Reiciendis laborum, commodi praesentium deleniti debitis soluta facere modi
+      distinctio impedit quisquam sit eveniet consectetur aliquid et eum perferendis similique, beatae veritatis,
+      delectus nesciunt explicabo accusantium numquam magni! Similique nisi nobis nostrum aut eligendi impedit porro,
+      esse repudiandae in atque corporis eveniet adipisci veritatis iure dolores nam velit eos nesciunt magnam rem illo
+      quisquam quaerat vitae. Ut suscipit inventore, quas aliquid nostrum fuga quo recusandae deserunt, ea nihil dicta
+      doloribus, laboriosam aut natus aperiam voluptas officia dolores assumenda eaque expedita hic cumque deleniti
+      nesciunt. Odit qui inventore vitae, ipsam corporis consequatur! Dignissimos perspiciatis eos culpa deserunt
+      reprehenderit, iure nulla ea excepturi, harum aperiam optio voluptatum, placeat laudantium veniam laboriosam
+      asperiores vel, debitis incidunt reiciendis quam consequatur consectetur doloribus! Iste nobis alias, itaque fugit
+      beatae suscipit, tenetur earum adipisci, soluta ab magni accusantium, recusandae? Porro veniam adipisci laborum
+      deserunt, dolorum ipsum eius assumenda officiis maxime magnam esse laudantium eligendi omnis accusamus ad
+      doloribus? Ipsa aliquid ex, eaque odit sequi alias labore nihil maiores ullam libero expedita eveniet natus
+      placeat earum voluptatum quod cupiditate adipisci, sapiente, provident inventore. Nihil esse odio nisi modi cumque
+      quam quas placeat maiores quod error facere culpa distinctio magni adipisci veritatis eaque nam, id illo expedita
+      sit? Quos, possimus nihil modi eligendi eius facere commodi blanditiis vel dicta veritatis, atque, id officia
+      perferendis quae iure, velit assumenda nemo praesentium eaque laboriosam itaque eveniet unde quidem.</div>
+  </div>
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<!-- 固定定位 -->
+
+<!-- <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+
+<style>
+  * {
+    background-color:
+      xrgba(0, 0, 0, 0.1);
+    xbox-shadow: 0 0 1px red;
+    ;
+  }
+
+  html {
+    zoom: 2;
+  }
+
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  section {
+    position: relative;
+  }
+
+  header,
+  aside,
+  main {
+    position: fixed;
+    margin: 0;
+  }
+
+  header {
+    top: 0;
+    height: 60px;
+    width: 100%;
+    line-height: 55px;
+    background-color: rgb(105, 109, 112);
+  }
+
+  aside {
+    top: 60px;
+    width: 100px;
+    height: calc(100% - 60px);
+    border: 1px solid;
+  }
+
+  main {
+    top: 60px;
+    left: 100px;
+    height: calc(100% - 60px);
+    width: calc(100% - 100px);
+    overflow: auto;
+    border: 1px solid;
+  }
+</style>
+
+<body>
+  <section>
+
+    <header>mailQQ邮箱</header>
+    <aside>收件箱</aside>
+    <main>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At velit, rerum, facilis nam sed laudantium odit
+      iste corporis officia neque nostrum voluptate modi atque temporibus accusantium, molestias aliquam doloremque,
+      consequatur quo. Recusandae quod at sapiente consectetur eaque deserunt dolores quo perspiciatis voluptate, in
+      illo qui magni, eum doloribus doloremque quisquam dignissimos aspernatur nisi. Illo aperiam quo explicabo ad earum
+      debitis consequatur itaque doloribus obcaecati amet vel ea minima tenetur cupiditate laudantium repudiandae,
+      veritatis necessitatibus sunt magni tempora sint at blanditiis corporis! Quibusdam commodi mollitia saepe
+      temporibus quia reprehenderit praesentium neque, explicabo, earum reiciendis beatae, sequi perferendis dicta
+      aperiam. Suscipit, et tenetur, ad magnam enim animi deleniti odit rerum eum recusandae tempore itaque hic. Fugiat
+      laudantium eligendi ut totam voluptates delectus illo dignissimos? Numquam nihil voluptatem id nam odit modi
+      similique magni praesentium incidunt earum laboriosam, possimus voluptas tempore impedit eveniet quaerat,
+      quibusdam pariatur quod tenetur alias minus nulla voluptate ipsum excepturi. Magni commodi consectetur, qui est
+      odio quasi, cumque voluptatibus velit excepturi aperiam corporis dolorum totam quae reiciendis rerum tempore
+      necessitatibus odit at incidunt, autem dolorem, adipisci dolore. Consequatur enim illo impedit, ad id sed placeat
+      odit voluptatibus magnam quo minus perspiciatis quod veritatis cumque reprehenderit, sunt sapiente cupiditate
+      temporibus porro fugiat, quaerat, eius vel adipisci est. Voluptatem ipsum, libero numquam illum, laborum beatae.
+      Tempore tempora, est, aperiam voluptatum quod ipsa, doloribus voluptatibus consequatur, consectetur neque nostrum
+      explicabo tenetur mollitia blanditiis nam quaerat corporis. Reiciendis pariatur quasi magnam nisi repudiandae vel
+      maiores ipsam quia excepturi inventore, ducimus ipsum amet adipisci, soluta. Rem veritatis minus praesentium et
+      similique distinctio, id iusto enim tenetur doloribus. Nulla ipsa eligendi voluptatem esse natus soluta tenetur
+      labore vero voluptate deleniti error enim numquam corrupti, reprehenderit unde expedita odit sint omnis at ullam
+      perferendis. Dicta error obcaecati deserunt id, itaque velit! Sed voluptatum aliquam porro animi.</main>
+
+  </section>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</body>
+
+</html> --> -->
