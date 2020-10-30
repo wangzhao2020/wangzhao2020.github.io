@@ -39,7 +39,7 @@
 
   /*高度需要确定，文字可以自动居中，每种情况根据实际需要取使用 */
   .b {
-    width: 200px;
+    width: 300px;
     height: 300px;
     display: table-cell;
     vertical-align: middle;
@@ -55,7 +55,7 @@
 
   /*第三种使用行内元素居中*/
   .c {
-    width: 200px;
+    width: 300px;
     height: 300px;
     line-height: 300px;
     text-align: center;
@@ -67,17 +67,60 @@
     display: inline-block;
     width: 50%;
   }
+
+  /* 第四种使用flex居中 */
+  .d {
+    display: flex;
+    width: 300px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+
+  /* 第五种使用transform居中 */
+  .e {
+    position: relative;
+    width: 300px;
+    height: 300px;
+  }
+
+  .e div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 </style>
 
 <body>
+  <p>1.定位与margin居中</p>
   <section class="a">
-    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+    <div>Lorem ipsum dolor sit amet, </div>
   </section>
-
+  <p>2.表格居中</p>
   <section class="b">
-    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, totam.</div>
+    <div>Lorem ipsum dolor sit amet, </div>
   </section>
 
+  <p>3.行内元素居中</p>
+  <section class="c">
+    <div>Lorem ipsum dolor sit amet, </div>
+  </section>
+
+  <p>4.flex居中</p>
+  <br>
+  <section class="d">
+    <div>Lorem ipsum dolor sit amet, </div>
+  </section>
+
+  <p>5.transform居中</p>
+  <br>
+  <section class="e">
+    <div>Lorem ipsum dolor sit amet, </div>
+  </section>
 
 </body>
 

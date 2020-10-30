@@ -1,0 +1,54 @@
+@font-face {
+  font-family: FontAwesome;
+  src: url('./fontawesome-webfont.woff2');
+}
+
+.fa {
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  font-family: FontAwesome;
+  xbackground-color: red;
+}
+
+.fa-fw {
+  width: 1.3em;
+  text-align: center;
+}
+/* 经过网站专门设计人员的计算得到 */
+.fa-lg {
+  font-size: 1.5em;
+  line-height: 0.6666em; 
+  vertical-align: -15%;
+}
+.fa-2x {
+  font-size: 2em;
+}
+.fa-3x {
+  font-size: 3em;
+}
+.fa-4x {
+  font-size: 4em;
+}
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-ul {
+  list-style: none;
+}
+.fa-li {
+  position: absolute;
+  left: 1.3em;
+}
+
+
+.fa-music::before {
+  content: '\f001';
+}
+.fa-search::before {
+  content: '\f002';
+}
+.fa-ele::before {
+  content: '\f003';
+}
