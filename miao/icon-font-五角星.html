@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<style>
+  * {
+    background-color:
+      rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 1px red;
+    ;
+  }
+
+  html {
+    zoom: 2;
+  }
+
+  /* 方法一使用flex，主轴方向取反方向，并且让div在主轴方向最后 */
+
+  .a {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  .fa-star-o.aa:hover::before {
+    xcontent: '\f005';
+  }
+
+  .fa-star-o.aa:hover~.fa-star-o.aa::before {
+    content: '\f005';
+  }
+
+
+  /* 方法二使用flex 的order属性，直接重新分配元素的顺序
+ */
+
+  .b {
+    display: flex;
+
+  }
+
+  .fa-star-o.bb:hover::before {
+    content: '\f005';
+  }
+
+  .fa-star-o.bb:hover~.fa-star-o::before {
+    content: '\f005';
+  }
+
+  /* 方法三使用div hover为实心，span hover 为空心，最后flex解决空隙问题
+ */
+
+  .c {
+    display: flex;
+  }
+
+  .c:hover>span::before {
+    content: '\f005';
+  }
+
+  .fa-star-o.cc:hover~.fa-star-o::before {
+    content: '\f006';
+  }
+</style>
+
+<body>
+  <p>使用flex，主轴方向设置</p>
+  <div class='a'>
+    <span class="fa fa-star-o aa"></span>
+    <span class="fa fa-star-o aa"></span>
+    <span class="fa fa-star-o aa"></span>
+    <span class="fa fa-star-o aa"></span>
+    <span class="fa fa-star-o aa"></span>
+  </div>
+
+  <p>使用flex的order属性重新排序</p>
+  <div class='b'>
+    <span class="fa fa-star-o bb" style='order:5'></span>
+    <span class="fa fa-star-o bb" style='order:4'></span>
+    <span class="fa fa-star-o bb" style='order:3'></span>
+    <span class="fa fa-star-o bb" style='order:2'></span>
+    <span class="fa fa-star-o bb" style='order:1'></span>
+  </div>
+
+  <p>使用div hover为实心，span hover 为空心，最后flex解决空隙问题</p>
+  <div class='c'>
+    <span class="fa fa-star-o cc"></span>
+    <span class="fa fa-star-o cc"></span>
+    <span class="fa fa-star-o cc"></span>
+    <span class="fa fa-star-o cc"></span>
+    <span class="fa fa-star-o cc"></span>
+  </div>
+
+
+
+</body>
+
+</html>

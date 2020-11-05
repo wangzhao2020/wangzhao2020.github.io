@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+
+<style>
+  * {
+    background-color:
+      rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 1px red;
+    ;
+  }
+
+  html {
+    zoom: 2;
+  }
+
+  @keyframes move {
+    from {
+      margin-left: 100%;
+      transform: translate(0);
+
+    }
+
+    to {
+      margin-left: 0%;
+      transform: translate (-100%);
+      text-indent: -333px;
+    }
+  }
+
+
+  div {
+    white-space: nowrap;
+    overflow: hidden;
+
+  }
+
+  span {
+    display: inline-block;
+    margin-left: 100%;
+    animation: move 5s linear 9999;
+  }
+</style>
+
+<body>
+
+  <marquee>aaa</marquee>
+  <div><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse nulla accusantium dicta incidunt, nam
+      repellendus, consequuntur animi eligendi quos perspiciatis qui. Beatae iure repellendus soluta magni ex, deserunt
+      aperiam cumque.</span></div>
+</body>
+
+</html>
