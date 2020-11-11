@@ -226,7 +226,7 @@
 </script>
 
 
-<script type="norun" id="ch0104/1">
+<script type="norun" id="ch0104/01">
   var n = Number(prompt())
   if (n > 0) {
     console.log('positive;')
@@ -239,7 +239,7 @@
   }
 
 </script>
-<script type="norun" id="ch0104/2">
+<script type="norun" id="ch0104/02">
   var a = Number(prompt())
   if (a >= 0) {
     console.log(a.toFixed(2))
@@ -248,7 +248,7 @@
   }
 
 </script>
-<script type="norun" id="ch0104/3">
+<script type="norun" id="ch0104/03">
   var n = Number(prompt())
   if (n % 2 == 0) {
     console.log('even')
@@ -257,7 +257,7 @@
   }
 
 </script>
-<script type="norun" id="ch0104/4">
+<script type="norun" id="ch0104/04">
   var n = String(prompt())
   var m = n.charCodeAt(n)
   if (m % 2 == 0) {
@@ -267,7 +267,7 @@
   }
 
 </script>
-<script type="norun" id="ch0104/5">
+<script type="norun" id="ch0104/05">
   var x = Number(prompt())
   var y = Number(prompt())
   if (x > y) {
@@ -282,7 +282,7 @@
 
 
 </script>
-<script type="norun" id="ch0104/6">
+<script type="norun" id="ch0104/06">
   var n = Number(prompt()) / 10
   if (n >= 1 && n < 10) {
     console.log(1)
@@ -291,7 +291,7 @@
   }
 
 </script>
-<script type="norun" id="ch0104/7">
+<script type="norun" id="ch0104/07">
   var a = Number(prompt())
   var b = Number(prompt())
   if (a >= 10 || b >= 20) {
@@ -301,7 +301,7 @@
   }
 
 </script>
-<script type="norun" id="ch0104/8">
+<script type="norun" id="ch0104/08">
   var n = Number(prompt())
   if (n % 3 == 0 && n % 5 == 0) {
     console.log('YES')
@@ -310,7 +310,7 @@
   }
 
 </script>
-<script type="norun" id="ch0104/9">
+<script type="norun" id="ch0104/09">
   var n = Number(prompt())
   if (n % 3 == 0) {
     console.log('3' + ' ')
@@ -325,7 +325,10 @@
     console.log('n')
   }
   // if捋顺很重要，
-  // 357在一行，先写小范围，再写大范围
+</script>
+
+
+<script xtype="norun" id="ch0104/9-1">
   var n = Number(prompt())
   var flag = false
   if (n % 3 == 0) {
@@ -343,11 +346,13 @@
   if (!flag) {
     console.log('n')
   }
-
-
-
 </script>
-<script xtype="norun" id="ch0104/10">
+
+
+// 357在一行，先写小范围，再写大范围
+
+
+<script type="norun" id="ch0104/10">
   var a = Number(prompt())
   var b = Number(prompt())
   if (a >= 60 && b < 60 || a < 60 && b >= 60) {
@@ -356,6 +361,61 @@
     console.log(0)
   }
 </script>
+
+
+延伸：如果有10门中5门不及格输出1，否则输出0
+<script type="norun" id="ch0104/10-puls">
+  var a = Number(prompt())
+  var b = Number(prompt())
+  var c = Number(prompt())
+  var d = Number(prompt())
+  var e = Number(prompt())
+  var f = Number(prompt())
+  var i = Number(prompt())
+  var j = Number(prompt())
+  var k = Number(prompt())
+  var l = Number(prompt())
+  var fail = 0
+  if (a < 60) {
+    fail = fail + 1;
+  }
+  if (b < 60) {
+    fail = fail + 1;
+  }
+  if (c < 60) {
+    fail = fail + 1;
+  }
+  if (d < 60) {
+    fail = fail + 1;
+  }
+  if (e < 60) {
+    fail = fail + 1;
+  }
+  if (f < 60) {
+    fail = fail + 1;
+  }
+  if (i < 60) {
+    fail = fail + 1;
+  }
+  if (j < 60) {
+    fail = fail + 1;
+  }
+  if (k < 60) {
+    fail = fail + 1;
+  }
+  if (l < 60) {
+    fail = fail + 1;
+  }
+  if (fail >= 5) {
+    console.log(1)
+  } else {
+    console.log(0)
+  }
+
+</script>
+
+
+
 <script type="norun" id="ch0104/11">
   var n = Number(prompt())
   if (n == 1 || n == 3 || n == 5) {
