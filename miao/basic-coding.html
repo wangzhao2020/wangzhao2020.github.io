@@ -466,13 +466,15 @@
 <script type="norun" id="ch0104/13-2">
   var x = Number(prompt())
   var y
-  if (x < 5) {
-    y = -x + 2.5
-  } else if (x < 10) {
-    y = 2 - 1.5 * (x - 3) * (x - 3)
-  } else (x < 20) {
+  if (x >= 10) {
     y = x / 2 - 1.5
+  } else if (x >= 5) {
+    y = 2 - 1.5 * (x - 3) * (x - 3)
+  } else if (x >= 0) {
+    y = -x + 2.5
   }
+
+
   console.log(y.toFixed(3))
   //可以进行优化，也可以从大范围开始写
 </script>
@@ -486,7 +488,7 @@
     price = 8;
   } else {
     if (weight > 1000) (
-      price = 8 + price + Math.ceil((weight - 1000) / 500) * 4
+      price = 8 + Math.ceil((weight - 1000) / 500) * 4
     )
   }
 
@@ -499,29 +501,39 @@
   }
 //价格单独计算，类似奶茶，每个维度做一次判断即可
 </script>
+
 <script type="norun" id="ch0104/15">
   var a = Number(prompt())
   var b = Number(prompt())
   var c = Number(prompt())
-  if (a >= b) {
-    if (a > c) {
-      console.log(a)
-    } else {
-      if (c >= a) {
-        console.log(c)
-      }
-    }
-  } else {
-    if (a < b) {
-      if (c > b) {
-        console.log(c)
-      } else {
-        console.log(b)
-      }
-    }
+  var max = a
+  if (b > max) {
+    max = b
+  }
+  if (c > max) {
+    max = c
+  }
+  console.log(max)
+  //用max写法  和
+</script>
+
+<script type="norun" id="ch0104/15-1">
+  var a = Number(prompt())
+  var b = Number(prompt())
+  var c = Number(prompt())
+  if (a >= b && a >= c) {
+    console.log(a)
+  }
+  if (b >= a && b >= c) {
+    console.log(b)
+  }
+  if (c >= b && c >= a) {
+    console.log(c)
   }
 </script>
-<script type="norun" id="ch0104/15-1">
+
+
+<script type="norun" id="ch0104/15-2">
   var a = Number(prompt())
   var b = Number(prompt())
   var c = Number(prompt())
@@ -542,7 +554,6 @@
       }
     }
   }
-  //用max写法  和
 </script>
 <script type="norun" id="ch0104/16">
   var a = Number(prompt())
@@ -592,7 +603,7 @@
   // 没有办法输出 + - * /
   // 变量不能写运算符，变量输出的是字符串，不会参与运算
 </script>
-<script xtype="norun" id="ch0104/20">
+<script type="norun" id="ch0104/20">
   var a = Number(prompt())
   var b = Number(prompt())
   var c = Number(prompt())
@@ -629,5 +640,512 @@
   } else {
     console.log('请确保y<=n*x')
   }
+
+</script>
+
+
+<script type="norun" id="ch0105/01">
+
+  var n = Number(prompt('请输入学生人数'))
+  var sum = 0
+  var m = n
+  while (m >= 1) {
+    var a = Number(prompt('请输入学生年龄'))
+    m = m - 1
+    var sum = sum + a
+  }
+  console.log((sum / n).toFixed(2))
+</script>
+
+
+<script type="norun" id="ch0105/02">
+  var sum = 0
+  var m = 12
+  while (m >= 1) {
+    var a = Number(prompt('请输入金额'))
+    m = m - 1
+    var sum = sum + a
+  }
+  console.log('$' + (sum / 12).toFixed(2))
+
+
+</script>
+
+<script type="norun" id="ch0105/02-1">
+  var sum = 0
+  for (i = 0; i <= 11; i++) {
+    var a = Number(prompt('请输入金额'))
+    var sum = sum + a
+  }
+  console.log('$' + (sum / 12).toFixed(2))
+
+
+</script>
+
+
+<script type="norun" id="ch0105/03">
+
+  var n = Number(prompt('请输入整数n'))
+  var sum = 0
+  var m = n
+  while (m >= 1) {
+    var a = Number(prompt('请输入数字'))
+    m = m - 1
+    var sum = sum + a
+  }
+  console.log((sum / n).toFixed(4))
+
+</script>
+
+
+<script type="norun" id="ch0105/04">
+
+  var n = Number(prompt('请输入整数n'))
+  var sum = 0
+  var m = n
+  while (m >= 1) {
+    var a = Number(prompt('请输入数字'))
+    m = m - 1
+    var sum = sum + a
+  }
+  console.log(sum + ' ' + (sum / n).toFixed(5))
+
+
+</script>
+
+
+<script type="norun" id="ch0105/05">
+
+  var n = Number(prompt('请输入整数n'))
+  var max = 0
+  var m = n
+  while (m >= 1) {
+    var a = Number(prompt('请输入数字'))
+    if (max < a) {
+      max = a
+    }
+    m = m - 1
+  }
+  console.log(max)
+
+</script>
+
+
+<script type="norun" id="ch0105/06">
+  var n = Number(prompt('请输入整数n'))
+  var max = 0
+  var min = 1000
+  var m = n
+  while (m >= 1) {
+    var a = Number(prompt('请输入数字'))
+    if (max < a) {
+      max = a
+    }
+    if (min > a) {
+      min = a
+    }
+    m = m - 1
+  }
+  console.log(max - min)
+
+
+</script>
+
+
+<script type="norun" id="ch0105/07">
+
+  var n = Number(prompt('请输入参赛天数'))
+  var sum = 0
+  var suma = 0
+  var sumb = 0
+  var sumc = 0
+
+  while (n >= 1) {
+    var a = Number(prompt('请输入金牌数目'))
+    var b = Number(prompt('请输入银牌数目'))
+    var c = Number(prompt('请输入铜牌数目'))
+    n = n - 1
+    var suma = suma + a
+    var sumb = sumb + b
+    var sumc = sumc + c
+  }
+  console.log(suma, sumb, sumc, suma + sumb + sumc)
+
+</script>
+
+
+<script type="norun" id="ch0105/08">
+
+  var n = Number(prompt('请输入整数n'))
+  var sum = (n - 2) * 180
+  var x = sum
+  while (n > 1) {
+    var a = Number(prompt('请输入度数'))
+    n = n - 1
+    x = x - a
+  }
+  console.log(x)
+
+</script>
+
+
+<script type="norun" id="ch0105/09">
+
+  var n = Number(prompt('请输入n'))
+  var m = Number(prompt('请输入m'))
+  var count = m - n + 1
+  var sum = 0
+  while (count > 0) {
+    if (n % 2 != 0) {
+      sum = sum + n
+    }
+    n = n + 1
+    m = m - 1
+    count = count - 1
+  }
+  console.log(sum)
+
+</script>
+
+
+<script type="norun" id="ch0105/10">
+
+  var n = Number(prompt('请输入n'))
+  var m = Number(prompt('请输入m'))
+  var count = m - n + 1
+  var sum = 0
+  while (count > 0) {
+    if (n % 17 == 0) {
+      sum = sum + n
+    }
+    n = n + 1
+    m = m - 1
+    count = count - 1
+  }
+  console.log(sum)
+
+</script>
+
+
+<script type="norun" id="ch0105/11">
+  var k = Number(prompt('请输入整数k 1<k<100'))
+  var a1 = 0
+  var a2 = 0
+  var a3 = 0
+
+  while (k >= 1) {
+    var a = Number(prompt('请输入数字'))
+    if (a == 1) {
+      a1 = a1 + 1
+    }
+    if (a == 5) {
+      a2 = a2 + 1
+    }
+    if (a == 10) {
+      a3 = a3 + 1
+    }
+    k = k - 1
+  }
+  console.log(a1)
+  console.log(a2)
+  console.log(a3)
+
+</script>
+
+
+<script type="norun" id="ch0105/12">
+  var N = Number(prompt('请输入整数N N<=100'))
+  var m = Number(prompt('请输入整数m'))
+  var a1 = 0
+  while (N >= 1) {
+    var a = Number(prompt('请输入数字'))
+    if (a == m) {
+      a1 = a1 + 1
+    }
+    N = N - 1
+  }
+  console.log(a1)
+
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/13">
+  var a = Number(prompt('请输入整数a'))
+  var n = Number(prompt('请输入整数n'))
+  var m = n
+  var power = 1
+  while (m >= 1) {
+
+    power = power * a
+    m = m - 1
+  }
+  console.log(power)
+
+
+</script>
+
+
+<script type="norun" id="ch0105/14">
+
+  var x = Number(prompt('请输入人口数x亿人口 1<=x<=100 '))
+  var n = Number(prompt('请输入整数年份n 1<=n<=100'))
+  var m = n
+  var power = 1
+  while (m >= 1) {
+
+    x = x * (1 + 0.001)
+    m = m - 1
+  }
+  console.log(x.toFixed(4))
+
+
+</script>
+
+
+<script type="norun" id="ch0105/15">
+
+  var R = Number(prompt('请输入复合年利率R 1<=R<=100 '))
+  var M = Number(prompt('请输入钱数M 100<=M<=1000000'))
+  var Y = Number(prompt('请输入年份Y 0<=n<=400'))
+
+  var m = Y
+  var power = 1
+  while (m >= 1) {
+    M = M * (1 + R / 100)
+    m = m - 1
+  }
+  console.log(Math.floor(M))
+
+</script>
+
+
+<script type="norun" id="ch0105/16">
+  debugger
+  var N = Number(prompt('请输入年薪N万 10<=N<=50 '))
+  var K = Number(prompt('房子价格以每年百分之K增长请输入k 1<=k<=20'))
+  var year = 1
+  var price = 200
+  var power = 1
+  while (true) {
+
+    var money = N * year
+    var price = price * (1 + K / 100)
+    if ((money - price) > 0) {
+      console.log(year)
+      break;
+    }
+    if (year > 20) {
+      console.log('Impossible')
+      break;
+    }
+    year = year + 1
+  }
+
+//答案存在问题，最后输出impossible
+</script>
+
+
+<script type="norun" id="ch0105/17">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/18">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/19">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/20">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/21">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/22">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/23">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/24">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/25">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/26">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/27">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/28">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/29">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/30">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/31">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/32">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/33">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/34">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/35">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/36">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/37">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/38">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/39">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/40">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/41">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/42">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/43">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/44">
+
+
+
+</script>
+
+
+<script type="norun" id="ch0105/45">
+
+
 
 </script>
