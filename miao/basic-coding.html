@@ -35,7 +35,7 @@
 <script type="norun" id="ch0103/04">
   var a = Number(prompt())
   var b = Number(prompt())
-  console.log(a / b + ' ' + a % b)
+  console.log(Math.floor(a / b) + ' ' + a % b)
 
 </script>
 
@@ -43,8 +43,8 @@
 <script type="norun" id="ch0103/05">
   var a = Number(prompt())
   var b = Number(prompt())
-  console.log(parseFloat(a / b))
-// 保留9位小数没有找到
+  console.log((a / b).toFixed(9))
+
 </script>
 
 
@@ -64,7 +64,7 @@
   var b = Number(prompt())
   var c = Number(prompt())
   var d = Number(prompt())
-  console.log(a * x * x * x + b * x * x + c * x + d)
+  console.log((a * x * x * x + b * x * x + c * x + d).toFixed(7))
 </script>
 
 
@@ -102,8 +102,8 @@
 <script type="norun" id="ch0103/11">
   var a = Number(prompt())
   var b = Number(prompt())
-  
-  console.log(a % b)
+
+  console.log((a % b).toFixed(4))
 </script>
 
 
@@ -141,13 +141,11 @@
   var h = Number(prompt())
   var r = Number(prompt())
   var t = 3.14159 * r * r * h / 1000
-  var n = 0
-  while (n * t < 20) {
-    n = n + 1;
-  }
+  var n
+  n = Math.ceil(20 / t)
   console.log(n)
 
-  不能使用n + 1, 需要重新写
+  // 不能使用n + 1来表示数量
 
 </script>
 
@@ -159,7 +157,7 @@
   var apple = n - Math.ceil(parseInt(y / x))
   console.log(apple)
 
-  // 主要是上取整的运用
+  // 主要是向上取整的运用
 
 </script>
 
@@ -229,12 +227,12 @@
 <script type="norun" id="ch0104/01">
   var n = Number(prompt())
   if (n > 0) {
-    console.log('positive;')
+    console.log('positive')
   } else {
     if (n == 0) {
-      console.log('zero;')
+      console.log('zero')
     } else {
-      console.log('negative;')
+      console.log('negative')
     }
   }
 
@@ -272,13 +270,12 @@
   var y = Number(prompt())
   if (x > y) {
     console.log('>')
+  } else if (x == y) {
+    console.log('=')
   } else {
-    if (x == y) {
-      console.log('=')
-    } else {
-      console.log('<')
-    }
+    console.log('<')
   }
+
 
 
 </script>
@@ -313,22 +310,23 @@
 <script type="norun" id="ch0104/09">
   var n = Number(prompt())
   if (n % 3 == 0) {
-    console.log('3' + ' ')
+    console.log(3)
   }
   if (n % 5 == 0) {
-    console.log('5' + ' ')
+    console.log(5)
   }
   if (n % 7 == 0) {
-    console.log('7')
+    console.log(7)
   }
-  else {
-    console.log('n')
+  if (n % 3 != 0 && n % 5 != 0 && n % 7 != 0) {
+    console.log(n)
   }
-  // if捋顺很重要，
+  // if捋顺很重要，数字不能改为字符串
+  // 最后直接加else是对应最后一个if的
 </script>
 
 
-<script xtype="norun" id="ch0104/9-1">
+<script type="norun" id="ch0104/9-1">
   var n = Number(prompt())
   var flag = false
   if (n % 3 == 0) {
@@ -346,10 +344,11 @@
   if (!flag) {
     console.log('n')
   }
+  // 357在一行，先写小范围，再写大范围
 </script>
 
 
-// 357在一行，先写小范围，再写大范围
+
 
 
 <script type="norun" id="ch0104/10">
@@ -363,8 +362,10 @@
 </script>
 
 
-延伸：如果有10门中5门不及格输出1，否则输出0
+
+
 <script type="norun" id="ch0104/10-puls">
+  //延伸：如果有10门中5门不及格输出1，否则输出0
   var a = Number(prompt())
   var b = Number(prompt())
   var c = Number(prompt())
@@ -428,53 +429,75 @@
   var n = Number(prompt())
   if ((n / 1.2 - 50) < n / 3) {
     console.log('Walk')
+  } else if ((n / 1.2 - 50) > n / 3) {
+    console.log('Bike')
   } else {
-    if ((n / 1.2 - 50) > n / 3) {
-      console.log('Bike')
-    } else {
-      console.log('All')
-    }
+    console.log('All')
   }
+
 </script>
 <script type="norun" id="ch0104/13">
   var x = Number(prompt())
   var y
-  if (x >= 0 && x < 5) {
+  if (0 <= x && x < 5) {
     y = -x + 2.5
-  } else {
-    if (x >= 5 && x < 10) {
-      y = 2 - 1.5(x - 3)(x - 3)
-    } else {
-      if (x >= 10 && x < 20) {
-        y = x / 2 - 1.5
-      }
-    }
+  } else if (5 <= x && x < 10) {
+    y = 2 - 1.5 * (x - 3) * (x - 3)
+  } else (10 <= x && x < 20) {
+    y = x / 2 - 1.5
   }
   console.log(y.toFixed(3))
-
-
 </script>
+
+<script type="norun" id="ch0104/13-1">
+  var x = Number(prompt())
+  var y
+  if (x < 5) {
+    y = -x + 2.5
+  } else if (x < 10) {
+    y = 2 - 1.5 * (x - 3) * (x - 3)
+  } else (x < 20) {
+    y = x / 2 - 1.5
+  }
+  console.log(y.toFixed(3))
+  //可以进行优化，先判断小范围，在判断大范围
+</script>
+
+<script type="norun" id="ch0104/13-2">
+  var x = Number(prompt())
+  var y
+  if (x < 5) {
+    y = -x + 2.5
+  } else if (x < 10) {
+    y = 2 - 1.5 * (x - 3) * (x - 3)
+  } else (x < 20) {
+    y = x / 2 - 1.5
+  }
+  console.log(y.toFixed(3))
+  //可以进行优化，也可以从大范围开始写
+</script>
+
 <script type="norun" id="ch0104/14">
   var weight = Number(prompt())
   var y = String(prompt())
-  var m
-  var m_all
+  var price
+
   if (weight <= 1000) {
-    m = 8;
+    price = 8;
   } else {
     if (weight > 1000) (
-      m = 8 + parseInt((weight - 1000) / 500 + 1) * 4
+      price = 8 + price + Math.ceil((weight - 1000) / 500) * 4
     )
   }
 
   if (y == 'y') {
-    console.log(m_all = m + 5)
+    console.log(price = price + 5)
   } else {
     if (y == 'n') {
-      console.log(m_all = m)
+      console.log(price)
     }
   }
-
+//价格单独计算，类似奶茶，每个维度做一次判断即可
 </script>
 <script type="norun" id="ch0104/15">
   var a = Number(prompt())
@@ -498,16 +521,40 @@
     }
   }
 </script>
+<script type="norun" id="ch0104/15-1">
+  var a = Number(prompt())
+  var b = Number(prompt())
+  var c = Number(prompt())
+  if (a >= b) {
+    if (a > c) {
+      console.log(a)
+    } else {
+      if (c >= a) {
+        console.log(c)
+      }
+    }
+  } else {
+    if (a < b) {
+      if (c > b) {
+        console.log(c)
+      } else {
+        console.log(b)
+      }
+    }
+  }
+  //用max写法  和
+</script>
 <script type="norun" id="ch0104/16">
   var a = Number(prompt())
   var b = Number(prompt())
   var c = Number(prompt())
-  if (a * a + b * b == c * c || a * a + c * c == b * b || b * b + c * c == a * a) {
+  if (a + b > c || a + c > b || b + c > a) {
     console.log('yes')
   } else {
     console.log('no')
   }
 
+//还有一个海伦公式
 </script>
 <script type="norun" id="ch0104/17">
   var a = Number(prompt())
@@ -543,38 +590,44 @@
   }
 
   // 没有办法输出 + - * /
+  // 变量不能写运算符，变量输出的是字符串，不会参与运算
 </script>
-<script type="norun" id="ch0104/20">
+<script xtype="norun" id="ch0104/20">
   var a = Number(prompt())
   var b = Number(prompt())
   var c = Number(prompt())
   var x1
   var x2
-  var der = Math.sqrt(b * b - 4 * a * c)
-  if (b * b == 4 * a * c) {
-    x1 = x2 = (-b + der) / (2 * a)
-    console.log('x1=' + x1 + 'x2=' + x2)
+  var delta = b * b - 4 * a * c
+  var imaginary = 4 * a * c - b * b
+  var real = - b / (2 * a)
+  if (delta == 0) {
+    x1 = -b / (2 * a)
+    console.log('x1=x2' + x1.toFixed(5))
 
+  } else if (delta > 0) {
+    x1 = (-b + Math.sqrt(delta)) / (2 * a)
+    x2 = (-b - Math.sqrt(delta)) / (2 * a)
+    console.log('x1=' + x1.toFixed(5) + 'x2=' + x2.toFixed(5))
   } else {
-    if (b * b > 4 * a * c) {
-      x1 = (-b + der) / (2 * a)
-      x2 = (-b - der) / (2 * a)
-      console.log('x1=' + x1 + 'x2=' + x2)
-    } else {
+    var x1r = - b / (2 * a)
+    var x1i = Math.sqrt(-delta) / (2 * a)
+    var x2r = - b / (2 * a)
+    var x2i = -Math.sqrt(-delta) / (2 * a)
 
-    }
+    console.log('x1=' + x1r.toFixed(5) + '+' + x1i.toFixed(5) + 'i;x2=' + x2r.toFixed(5) + x2i.toFixed(5) + 'i')
   }
-  // 没看明白虚根
+//字符串相加会把其它类型变为字符串
 </script>
 <script type="norun" id="ch0104/21">
-    var n = Number(prompt())
-    var x = Number(prompt())
-    var y = Number(prompt())
-    if (y <= n * x) {
-      var apple = n - (parseInt(y / x + 1))
-      console.log(apple)
-    } else {
-      console.log('请确保y<=n*x')
-    }
+  var n = Number(prompt())
+  var x = Number(prompt())
+  var y = Number(prompt())
+  if (y <= n * x) {
+    var apple = n - Math.ceil(y / x)
+    console.log(apple)
+  } else {
+    console.log('请确保y<=n*x')
+  }
 
 </script>
