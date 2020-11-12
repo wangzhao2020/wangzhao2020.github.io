@@ -658,6 +658,20 @@
 </script>
 
 
+<script type="norun" id="ch0105/01-1">
+
+  var n = Number(prompt('请输入学生人数'))
+  var sum = 0
+  var count = 0
+  //count 来计数，直接在while里边进行比较
+  while (count < n) {
+    var a = Number(prompt('请输入学生年龄'))
+    count = count + 1
+    var sum = sum + a
+  }
+  console.log((sum / n).toFixed(2))
+</script>
+
 <script type="norun" id="ch0105/02">
   var sum = 0
   var m = 12
@@ -717,14 +731,29 @@
 <script type="norun" id="ch0105/05">
 
   var n = Number(prompt('请输入整数n'))
-  var max = 0
-  var m = n
+  var max = 0  //最大值需要是一个足够小的值，需要小于所有输入的值
+  var m = n    //刚开始max = 0 ，现在设置为无限小 -Infinity 
   while (m >= 1) {
+    var a = Number(prompt('请输入数字'))
+    if (max < a) {//新输入的分数数字n如果比max还大
+      max = a     //让新输入的分数成为新的最高分
+    }
+    m = m - 1
+  }
+  console.log(max)
+
+</script>
+<script type="norun" id="ch0105/05-1">
+
+  var n = Number(prompt('请输入整数n'))
+  var max = 0
+  var count = 0
+  while (count < n) {
     var a = Number(prompt('请输入数字'))
     if (max < a) {
       max = a
     }
-    m = m - 1
+    count = count + 1
   }
   console.log(max)
 
@@ -734,8 +763,8 @@
 <script type="norun" id="ch0105/06">
   var n = Number(prompt('请输入整数n'))
   var max = 0
-  var min = 1000
-  var m = n
+  var min = 1000   //最小值需要最够大，要大于所有输入的值
+  var m = n        //因此可以设置为无限大 Infinity
   while (m >= 1) {
     var a = Number(prompt('请输入数字'))
     if (max < a) {
@@ -773,6 +802,27 @@
 
 </script>
 
+<script type="norun" id="ch0105/07-1">
+
+  var day = Number(prompt('请输入参赛天数'))
+  var sum = 0
+  var suma = 0
+  var sumb = 0
+  var sumc = 0
+  var c = 0
+
+  while (c < day) {
+    var a = Number(prompt('请输入金牌数目'))
+    var b = Number(prompt('请输入银牌数目'))
+    var c = Number(prompt('请输入铜牌数目'))
+    c = c + 1
+    var suma = suma + a
+    var sumb = sumb + b
+    var sumc = sumc + c
+  }
+  console.log(suma, sumb, sumc, suma + sumb + sumc)
+
+</script>
 
 <script type="norun" id="ch0105/08">
 
@@ -781,8 +831,8 @@
   var x = sum
   while (n > 1) {
     var a = Number(prompt('请输入度数'))
-    n = n - 1
     x = x - a
+    n = n - 1
   }
   console.log(x)
 
@@ -791,22 +841,38 @@
 
 <script type="norun" id="ch0105/09">
 
-  var n = Number(prompt('请输入n'))
+
   var m = Number(prompt('请输入m'))
-  var count = m - n + 1
+  var n = Number(prompt('请输入n'))
+  var count = n - m + 1
   var sum = 0
   while (count > 0) {
-    if (n % 2 != 0) {
-      sum = sum + n
+    if (m % 2 != 0) {
+      sum = sum + m
     }
-    n = n + 1
-    m = m - 1
+    m = m + 1
+    n = n - 1
     count = count - 1
   }
   console.log(sum)
 
 </script>
 
+<script type="norun" id="ch0105/09-1">
+
+  var m = Number(prompt('请输入m'))
+  var n = Number(prompt('请输入n'))
+  var c = m
+  var sum = 0
+  while (c <= n) {
+    if (c % 2 != 0) {
+      sum = sum + c
+    }
+    c = c + 1
+  }
+  console.log(sum)
+
+</script>
 
 <script type="norun" id="ch0105/10">
 
@@ -949,7 +1015,27 @@
 
 
 <script type="norun" id="ch0105/17">
+  var k = Number(prompt())
+  var c = 2
+  var sum = 0
+  var a1 = 1
+  var a2 = 1
+  if (k == 1) {
+    sum = a1
+  } else if (k == 2) {
+    sum = a2
+  } else if (k > 2) {
+    while (c < k) {
+      var a3 = a1 + a2
+      var sum = a3
+      a1 = a2
+      a2 = a3
+      c += 1
+    }
+  }
+  console.log(sum)
 
+//取巧的方法，a1为1 a2为0 直接循环
 
 
 </script>
@@ -957,19 +1043,59 @@
 
 <script type="norun" id="ch0105/18">
 
+  var n = Number(prompt('总疗程数n  1<n<=20'))
+  var c = 1
+  var all_cocktail = Number(prompt('鸡尾酒总病例'))
+  var valid_cocktail = Number(prompt('鸡尾酒疗效有效的病例数'))
+  var x = valid_cocktail / all_cocktail
 
+  while (c < n) {
+    var all = Number(prompt('总病例'))
+    var valid = Number(prompt('疗效有效的病例数'))
+    var y = valid / all
+    if ((y - x) > 0.05) {
+      console.log('better')
+    } else if ((x - y) > 0.05) {
+      console.log('worse')
+    } else {
+      console.log('same')
+    }
 
+    c += 1
+  }
 </script>
 
 
 <script type="norun" id="ch0105/19">
 
+  var n = Number(prompt('请输入屋顶数'))
 
+  var t = 0
+
+
+  for (var i = 0; i < n; i++) {
+
+    var x = Number(prompt('请输入x坐标'))
+    var y = Number(prompt('请输入y坐标'))
+    var people = Number(prompt('请输入人数'))
+    t = t + (Math.sqrt(x ** 2 + y ** 2)) / 50 * 2 + people * 1.5
+  }
+  console.log(Math.ceil(t))
 
 </script>
 
 
 <script type="norun" id="ch0105/20">
+  var h = Number(prompt('请输入起始高度'))
+  var sum = h
+  for (var i = 1; i < 10; i++) {
+    var hl = h / 2
+    sum = sum + hl * 2
+    h = hl
+
+  }
+  console.log(sum.toFixed(4))
+  console.log((hl / 2).toFixed(7))
 
 
 
@@ -977,6 +1103,21 @@
 
 
 <script type="norun" id="ch0105/21">
+  var n = Number(prompt('请输入角谷猜想正整数'))
+  var m = 0
+  debugger
+  while (n != 1) {
+    if (n % 2 == 0) {
+      m = n / 2
+      console.log(n + '/' + '2' + '=' + m)
+      n = m
+    } else if (n % 2 != 0) {
+      m = n * 3 + 1
+      console.log(n + '*' + '3' + '+' + '1' + '=' + m)
+      n = m
+    }
+  }
+  console.log('End')
 
 
 
@@ -985,7 +1126,29 @@
 
 <script type="norun" id="ch0105/22">
 
+  var money = 0
+  //手里的钱
+  var save = 0
+  //存储的钱
 
+  for (var i = 1; i < 13; i++) {
+    var n = Number(prompt('请输入第' + i + '月开销'))
+    money = money + 300 - n
+    if (money < 0) {
+      console.log('-' + i)
+      break;
+    } else {
+      if (money >= 100) {
+        save = save + (money - money % 100)
+        money = money % 100
+      }
+    }
+    if (i == 12) {
+      save = save * 1.2
+      console.log(save)
+    }
+  }
+//样例2 结果为1560，答案为1580，没有找到少20的原因
 
 </script>
 

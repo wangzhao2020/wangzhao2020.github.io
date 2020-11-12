@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas width="400" height="300"></canvas>
+</body>
+<script>
+  var canvas = document.querySelector('canvas')
+  canvas.style.imageRendering = 'pixelated'
+  var ctx = canvas.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    x = x | 0
+    y = y | 0
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+
+  function line(x1, y1, x2, y2) {
+    ctx.strokeStyle = 'black'
+    ctx.moveTo(x1, y1)
+    ctx.lineTo(x2, y2)
+    ctx.stroke()
+  }
+  /**
+   * YOUR TASK
+画图的题：
+画一条实线
+画一条一个实点一个空点的虚线
+画一条两个实点两个空点的虚线
+画一条三个实点两个空点的虚线
+画一条45度的斜线
+画一条30度的斜线（选做）
+在四个角画分别画一条45度的斜线以让画面看起来像一个相框
+画一条跨越画布左上角和右下角的对角线
+画一个空心矩形
+画一个实心矩形
+画一个rgb色彩空间的某一面
+画一个空心的圆
+画一个实心的圆
+画一个大小合适的sin(x)的图像
+   */
+</script>
+<script>
+  // YOUR CODE GOES BELOW
+  //画一条实线
+  for (var i = 0; i < 400; i++) {
+    dot(i, 2)
+  }
+
+  //画一条一个实点一个空点的虚线
+  for (var i = 0; i < 400; i++) {
+    if (i % 2 == 0) {
+      dot(i, 4)
+    }
+  }
+  //画一条两个实点两个空点的虚线
+  for (var i = 1; i < 3; i++) {
+    a = i
+    for (var a; a < 400; a += 4) {
+      dot(a, 6)
+    }
+  }
+  //画一条三个实点两个空点的虚线
+  for (var i = 1; i < 4; i++) {
+    a = i
+    for (var a; a < 400; a += 5) {
+      dot(a, 8)
+    }
+  }
+  //画一条45度的斜线
+  for (var i = 1; i < 400; i++) {
+    dot(i, i)
+  }
+
+  //画一条30度的斜线（选做
+  for (var i = 1; i < 400; i++) {
+    dot(i, 2 * i)
+  }
+  //在四个角画分别画一条45度的斜线以让画面看起来像一个相框
+  for (var i = 0; i < 400; i++) {
+    dot(i, i + 270, 'red')
+  }
+  for (var i = 0; i < 400; i++) {
+    dot(i + 370, i, 'red')
+  }
+  for (var i = 0; i < 400; i++) {
+    dot(i, 30 - i, 'red')
+  }
+  for (var i = 0; i < 400; i++) {
+    dot(i, 670 - i, 'red')
+  }
+  //画一条跨越画布左上角和右下角的对角线
+  for (var i = 0; i < 400; i++) {
+    dot(i, i * 3 / 4, 'red')
+  }
+  //画一个空心矩形
+
+
+  for (var i = 80; i < 150; i++) {
+    dot(i, 10)
+  }
+  for (var i = 80; i <= 150; i++) {
+    dot(i, 60)
+  }
+  for (var i = 10; i < 60; i++) {
+    dot(80, i)
+  }
+  for (var i = 10; i < 60; i++) {
+    dot(150, i)
+  }
+
+  //画一个实心矩形
+  for (var i = 300; i < 390; i++) {
+    dot(i, 150, 'lime')
+  }
+  for (var i = 300; i <= 390; i++) {
+    dot(i, 200, 'lime')
+  }
+  for (var i = 150; i < 200; i++) {
+    dot(300, i, 'lime')
+  }
+  for (var i = 150; i < 200; i++) {
+    dot(390, i, 'lime')
+  }
+
+  for (var x = 300; x < 390; x++) {
+    for (var y = 150; y < 200; y++) {
+      dot(x, y, 'lime')
+    }
+  }
+  //画一个rgb色彩空间的某一面
+  for (var i = 200; i < 328; i++) {
+    dot(i, 16)
+  }
+  for (var i = 200; i < 328; i++) {
+    dot(i, 144, 'white')
+  }
+  for (var i = 16; i < 144; i++) {
+    dot(200, i)
+  }
+  for (var i = 16; i < 144; i++) {
+    dot(328, i, 'white')
+  }
+  for (var x = 200; x < 328; x += 8) {
+    for (var y = 16; y < 144; y++) {
+      dot(x, y)
+    }
+  }
+  for (var y = 16; y < 144; y += 8) {
+    for (var x = 200; x < 328; x++) {
+      dot(x, y)
+    }
+  }
+
+
+
+  for (var x = 200; x < 208; x++) {
+    for (var y = 16; y < 24; y++) {
+      dot(x, y, '#00f')
+    }
+  }
+  for (var x = 208; x < 216; x++) {
+    for (var y = 16; y < 24; y++) {
+      dot(x, y, '#01f')
+    }
+  }
+  for (var x = 216; x < 224; x++) {
+    for (var y = 16; y < 24; y++) {
+      dot(x, y, '#02f')
+    }
+  }
+  for (var x = 224; x < 232; x++) {
+    for (var y = 16; y < 24; y++) {
+      dot(x, y, '#03f')
+    }
+  }
+  for (var x = 232; x < 240; x++) {
+    for (var y = 16; y < 24; y++) {
+      dot(x, y, '#04f')
+    }
+  }
+  for (var x = 240; x < 248; x++) {
+    for (var y = 16; y < 24; y++) {
+      dot(x, y, '#05f')
+    }
+  }
+  for (var x = 248; x < 256; x++) {
+    for (var y = 16; y < 24; y++) {
+      dot(x, y, '#06f')
+    }
+  }
+  for (var x = 256; x < 264; x++) {
+    for (var y = 16; y < 24; y++) {
+      dot(x, y, '#07f')
+    }
+  }
+
+  for (var x = 264; x < 272; x++) {
+    for (var y = 16; y < 24; y++) {
+      dot(x, y, '#08f')
+    }
+  }
+  for (var x = 272; x < 280; x++) {
+    for (var y = 16; y < 24; y++) {
+      dot(x, y, '#09f')
+    }
+  }
+  for (var x = 280; x < 288; x++) {
+    for (var y = 16; y < 24; y++) {
+      dot(x, y, '#0af')
+    }
+  }
+  for (var x = 288; x < 296; x++) {
+    for (var y = 16; y < 24; y++) {
+      dot(x, y, '#0bf')
+    }
+  }
+  for (var x = 296; x < 304; x++) {
+    for (var y = 16; y < 24; y++) {
+      dot(x, y, '#0cf')
+    }
+  }
+  for (var x = 304; x < 312; x++) {
+    for (var y = 16; y < 24; y++) {
+      dot(x, y, '#0df')
+    }
+  }
+  for (var x = 312; x < 320; x++) {
+    for (var y = 16; y < 24; y++) {
+      dot(x, y, '#0ef')
+    }
+  }
+  for (var x = 320; x < 328; x++) {
+    for (var y = 16; y < 24; y++) {
+      dot(x, y, '#0ff')
+    }
+  }
+
+
+
+
+
+
+  for (var x = 200; x < 208; x++) {
+    for (var y = 24; y < 32; y++) {
+      dot(x, y, '#10f')
+    }
+  }
+  for (var x = 208; x < 216; x++) {
+    for (var y = 24; y < 32; y++) {
+      dot(x, y, '#11f')
+    }
+  }
+  for (var x = 216; x < 224; x++) {
+    for (var y = 24; y < 32; y++) {
+      dot(x, y, '#12f')
+    }
+  }
+  for (var x = 224; x < 232; x++) {
+    for (var y = 24; y < 32; y++) {
+      dot(x, y, '#13f')
+    }
+  }
+  for (var x = 232; x < 240; x++) {
+    for (var y = 24; y < 32; y++) {
+      dot(x, y, '#14f')
+    }
+  }
+  for (var x = 240; x < 248; x++) {
+    for (var y = 24; y < 32; y++) {
+      dot(x, y, '#15f')
+    }
+  }
+  for (var x = 248; x < 256; x++) {
+    for (var y = 24; y < 32; y++) {
+      dot(x, y, '#16f')
+    }
+  }
+  for (var x = 256; x < 264; x++) {
+    for (var y = 24; y < 32; y++) {
+      dot(x, y, '#17f')
+    }
+  }
+
+  for (var x = 264; x < 272; x++) {
+    for (var y = 24; y < 32; y++) {
+      dot(x, y, '#18f')
+    }
+  }
+  for (var x = 272; x < 280; x++) {
+    for (var y = 24; y < 32; y++) {
+      dot(x, y, '#19f')
+    }
+  }
+  for (var x = 280; x < 288; x++) {
+    for (var y = 24; y < 32; y++) {
+      dot(x, y, '#1af')
+    }
+  }
+  for (var x = 288; x < 296; x++) {
+    for (var y = 24; y < 32; y++) {
+      dot(x, y, '#1bf')
+    }
+  }
+  for (var x = 296; x < 304; x++) {
+    for (var y = 24; y < 32; y++) {
+      dot(x, y, '#1cf')
+    }
+  }
+  for (var x = 304; x < 312; x++) {
+    for (var y = 24; y < 32; y++) {
+      dot(x, y, '#1df')
+    }
+  }
+  for (var x = 312; x < 320; x++) {
+    for (var y = 24; y < 32; y++) {
+      dot(x, y, '#1ef')
+    }
+  }
+  for (var x = 320; x < 328; x++) {
+    for (var y = 24; y < 32; y++) {
+      dot(x, y, '#1ff')
+    }
+  }
+
+
+
+
+
+  for (var x = 200; x < 208; x++) {
+    for (var y = 32; y < 40; y++) {
+      dot(x, y, '#20f')
+    }
+  }
+  for (var x = 208; x < 216; x++) {
+    for (var y = 32; y < 40; y++) {
+      dot(x, y, '#21f')
+    }
+  }
+  for (var x = 216; x < 224; x++) {
+    for (var y = 32; y < 40; y++) {
+      dot(x, y, '#22f')
+    }
+  }
+  for (var x = 224; x < 232; x++) {
+    for (var y = 32; y < 40; y++) {
+      dot(x, y, '#23f')
+    }
+  }
+  for (var x = 232; x < 240; x++) {
+    for (var y = 32; y < 40; y++) {
+      dot(x, y, '#24f')
+    }
+  }
+  for (var x = 240; x < 248; x++) {
+    for (var y = 32; y < 40; y++) {
+      dot(x, y, '#25f')
+    }
+  }
+  for (var x = 248; x < 256; x++) {
+    for (var y = 32; y < 40; y++) {
+      dot(x, y, '#26f')
+    }
+  }
+  for (var x = 256; x < 264; x++) {
+    for (var y = 32; y < 40; y++) {
+      dot(x, y, '#27f')
+    }
+  }
+
+  for (var x = 264; x < 272; x++) {
+    for (var y = 32; y < 40; y++) {
+      dot(x, y, '#28f')
+    }
+  }
+  for (var x = 272; x < 280; x++) {
+    for (var y = 32; y < 40; y++) {
+      dot(x, y, '#29f')
+    }
+  }
+  for (var x = 280; x < 288; x++) {
+    for (var y = 32; y < 40; y++) {
+      dot(x, y, '#2af')
+    }
+  }
+  for (var x = 288; x < 296; x++) {
+    for (var y = 32; y < 40; y++) {
+      dot(x, y, '#2bf')
+    }
+  }
+  for (var x = 296; x < 304; x++) {
+    for (var y = 32; y < 40; y++) {
+      dot(x, y, '#2cf')
+    }
+  }
+  for (var x = 304; x < 312; x++) {
+    for (var y = 32; y < 40; y++) {
+      dot(x, y, '#2df')
+    }
+  }
+  for (var x = 312; x < 320; x++) {
+    for (var y = 32; y < 40; y++) {
+      dot(x, y, '#2ef')
+    }
+  }
+  for (var x = 320; x < 328; x++) {
+    for (var y = 32; y < 40; y++) {
+      dot(x, y, '#2ff')
+    }
+  }
+
+
+
+
+
+
+  for (var x = 200; x < 208; x++) {
+    for (var y = 40; y < 48; y++) {
+      dot(x, y, '#30f')
+    }
+  }
+  for (var x = 208; x < 216; x++) {
+    for (var y = 40; y < 48; y++) {
+      dot(x, y, '#31f')
+    }
+  }
+  for (var x = 216; x < 224; x++) {
+    for (var y = 40; y < 48; y++) {
+      dot(x, y, '#32f')
+    }
+  }
+  for (var x = 224; x < 232; x++) {
+    for (var y = 40; y < 48; y++) {
+      dot(x, y, '#33f')
+    }
+  }
+  for (var x = 232; x < 240; x++) {
+    for (var y = 40; y < 48; y++) {
+      dot(x, y, '#34f')
+    }
+  }
+  for (var x = 240; x < 248; x++) {
+    for (var y = 40; y < 48; y++) {
+      dot(x, y, '#35f')
+    }
+  }
+  for (var x = 248; x < 256; x++) {
+    for (var y = 40; y < 48; y++) {
+      dot(x, y, '#36f')
+    }
+  }
+  for (var x = 256; x < 264; x++) {
+    for (var y = 40; y < 48; y++) {
+      dot(x, y, '#37f')
+    }
+  }
+
+  for (var x = 264; x < 272; x++) {
+    for (var y = 40; y < 48; y++) {
+      dot(x, y, '#38f')
+    }
+  }
+  for (var x = 272; x < 280; x++) {
+    for (var y = 40; y < 48; y++) {
+      dot(x, y, '#39f')
+    }
+  }
+  for (var x = 280; x < 288; x++) {
+    for (var y = 40; y < 48; y++) {
+      dot(x, y, '#3af')
+    }
+  }
+  for (var x = 288; x < 296; x++) {
+    for (var y = 40; y < 48; y++) {
+      dot(x, y, '#3bf')
+    }
+  }
+  for (var x = 296; x < 304; x++) {
+    for (var y = 40; y < 48; y++) {
+      dot(x, y, '#3cf')
+    }
+  }
+  for (var x = 304; x < 312; x++) {
+    for (var y = 40; y < 48; y++) {
+      dot(x, y, '#3df')
+    }
+  }
+  for (var x = 312; x < 320; x++) {
+    for (var y = 40; y < 48; y++) {
+      dot(x, y, '#3ef')
+    }
+  }
+  for (var x = 320; x < 328; x++) {
+    for (var y = 40; y < 48; y++) {
+      dot(x, y, '#3ff')
+    }
+  }
+
+
+
+
+
+  for (var x = 200; x < 208; x++) {
+    for (var y = 48; y < 56; y++) {
+      dot(x, y, '#40f')
+    }
+  }
+  for (var x = 208; x < 216; x++) {
+    for (var y = 48; y < 56; y++) {
+      dot(x, y, '#41f')
+    }
+  }
+  for (var x = 216; x < 224; x++) {
+    for (var y = 48; y < 56; y++) {
+      dot(x, y, '#42f')
+    }
+  }
+  for (var x = 224; x < 232; x++) {
+    for (var y = 48; y < 56; y++) {
+      dot(x, y, '#43f')
+    }
+  }
+  for (var x = 232; x < 240; x++) {
+    for (var y = 48; y < 56; y++) {
+      dot(x, y, '#44f')
+    }
+  }
+  for (var x = 240; x < 248; x++) {
+    for (var y = 48; y < 56; y++) {
+      dot(x, y, '#45f')
+    }
+  }
+  for (var x = 248; x < 256; x++) {
+    for (var y = 48; y < 56; y++) {
+      dot(x, y, '#46f')
+    }
+  }
+  for (var x = 256; x < 264; x++) {
+    for (var y = 48; y < 56; y++) {
+      dot(x, y, '#47f')
+    }
+  }
+
+  for (var x = 264; x < 272; x++) {
+    for (var y = 48; y < 56; y++) {
+      dot(x, y, '#48f')
+    }
+  }
+  for (var x = 272; x < 280; x++) {
+    for (var y = 48; y < 56; y++) {
+      dot(x, y, '#49f')
+    }
+  }
+  for (var x = 280; x < 288; x++) {
+    for (var y = 48; y < 56; y++) {
+      dot(x, y, '#4af')
+    }
+  }
+  for (var x = 288; x < 296; x++) {
+    for (var y = 48; y < 56; y++) {
+      dot(x, y, '#4bf')
+    }
+  }
+  for (var x = 296; x < 304; x++) {
+    for (var y = 48; y < 56; y++) {
+      dot(x, y, '#4cf')
+    }
+  }
+  for (var x = 304; x < 312; x++) {
+    for (var y = 48; y < 56; y++) {
+      dot(x, y, '#4df')
+    }
+  }
+  for (var x = 312; x < 320; x++) {
+    for (var y = 48; y < 56; y++) {
+      dot(x, y, '#4ef')
+    }
+  }
+  for (var x = 320; x < 328; x++) {
+    for (var y = 48; y < 56; y++) {
+      dot(x, y, '#4ff')
+    }
+  }
+
+
+
+
+
+
+  for (var x = 200; x < 208; x++) {
+    for (var y = 56; y < 64; y++) {
+      dot(x, y, '#50f')
+    }
+  }
+  for (var x = 208; x < 216; x++) {
+    for (var y = 56; y < 64; y++) {
+      dot(x, y, '#51f')
+    }
+  }
+  for (var x = 216; x < 224; x++) {
+    for (var y = 56; y < 64; y++) {
+      dot(x, y, '#52f')
+    }
+  }
+  for (var x = 224; x < 232; x++) {
+    for (var y = 56; y < 64; y++) {
+      dot(x, y, '#53f')
+    }
+  }
+  for (var x = 232; x < 240; x++) {
+    for (var y = 56; y < 64; y++) {
+      dot(x, y, '#54f')
+    }
+  }
+  for (var x = 240; x < 248; x++) {
+    for (var y = 56; y < 64; y++) {
+      dot(x, y, '#55f')
+    }
+  }
+  for (var x = 248; x < 256; x++) {
+    for (var y = 56; y < 64; y++) {
+      dot(x, y, '#56f')
+    }
+  }
+  for (var x = 256; x < 264; x++) {
+    for (var y = 56; y < 64; y++) {
+      dot(x, y, '#57f')
+    }
+  }
+
+  for (var x = 264; x < 272; x++) {
+    for (var y = 56; y < 64; y++) {
+      dot(x, y, '#58f')
+    }
+  }
+  for (var x = 272; x < 280; x++) {
+    for (var y = 56; y < 64; y++) {
+      dot(x, y, '#59f')
+    }
+  }
+  for (var x = 280; x < 288; x++) {
+    for (var y = 56; y < 64; y++) {
+      dot(x, y, '#5af')
+    }
+  }
+  for (var x = 288; x < 296; x++) {
+    for (var y = 56; y < 64; y++) {
+      dot(x, y, '#5bf')
+    }
+  }
+  for (var x = 296; x < 304; x++) {
+    for (var y = 56; y < 64; y++) {
+      dot(x, y, '#5cf')
+    }
+  }
+  for (var x = 304; x < 312; x++) {
+    for (var y = 56; y < 64; y++) {
+      dot(x, y, '#5df')
+    }
+  }
+  for (var x = 312; x < 320; x++) {
+    for (var y = 56; y < 64; y++) {
+      dot(x, y, '#5ef')
+    }
+  }
+  for (var x = 320; x < 328; x++) {
+    for (var y = 56; y < 64; y++) {
+      dot(x, y, '#5ff')
+    }
+  }
+
+
+
+
+
+
+
+  for (var x = 200; x < 208; x++) {
+    for (var y = 64; y < 72; y++) {
+      dot(x, y, '#60f')
+    }
+  }
+  for (var x = 208; x < 216; x++) {
+    for (var y = 64; y < 72; y++) {
+      dot(x, y, '#61f')
+    }
+  }
+  for (var x = 216; x < 224; x++) {
+    for (var y = 64; y < 72; y++) {
+      dot(x, y, '#62f')
+    }
+  }
+  for (var x = 224; x < 232; x++) {
+    for (var y = 64; y < 72; y++) {
+      dot(x, y, '#63f')
+    }
+  }
+  for (var x = 232; x < 240; x++) {
+    for (var y = 64; y < 72; y++) {
+      dot(x, y, '#64f')
+    }
+  }
+  for (var x = 240; x < 248; x++) {
+    for (var y = 64; y < 72; y++) {
+      dot(x, y, '#65f')
+    }
+  }
+  for (var x = 248; x < 256; x++) {
+    for (var y = 64; y < 72; y++) {
+      dot(x, y, '#66f')
+    }
+  }
+  for (var x = 256; x < 264; x++) {
+    for (var y = 64; y < 72; y++) {
+      dot(x, y, '#67f')
+    }
+  }
+
+  for (var x = 264; x < 272; x++) {
+    for (var y = 64; y < 72; y++) {
+      dot(x, y, '#68f')
+    }
+  }
+  for (var x = 272; x < 280; x++) {
+    for (var y = 64; y < 72; y++) {
+      dot(x, y, '#69f')
+    }
+  }
+  for (var x = 280; x < 288; x++) {
+    for (var y = 64; y < 72; y++) {
+      dot(x, y, '#6af')
+    }
+  }
+  for (var x = 288; x < 296; x++) {
+    for (var y = 64; y < 72; y++) {
+      dot(x, y, '#6bf')
+    }
+  }
+  for (var x = 296; x < 304; x++) {
+    for (var y = 64; y < 72; y++) {
+      dot(x, y, '#6cf')
+    }
+  }
+  for (var x = 304; x < 312; x++) {
+    for (var y = 64; y < 72; y++) {
+      dot(x, y, '#6df')
+    }
+  }
+  for (var x = 312; x < 320; x++) {
+    for (var y = 64; y < 72; y++) {
+      dot(x, y, '#6ef')
+    }
+  }
+  for (var x = 320; x < 328; x++) {
+    for (var y = 64; y < 72; y++) {
+      dot(x, y, '#6ff')
+    }
+  }
+
+
+
+
+
+  for (var x = 200; x < 208; x++) {
+    for (var y = 72; y < 80; y++) {
+      dot(x, y, '#70f')
+    }
+  }
+  for (var x = 208; x < 216; x++) {
+    for (var y = 72; y < 80; y++) {
+      dot(x, y, '#71f')
+    }
+  }
+  for (var x = 216; x < 224; x++) {
+    for (var y = 72; y < 80; y++) {
+      dot(x, y, '#72f')
+    }
+  }
+  for (var x = 224; x < 232; x++) {
+    for (var y = 72; y < 80; y++) {
+      dot(x, y, '#73f')
+    }
+  }
+  for (var x = 232; x < 240; x++) {
+    for (var y = 72; y < 80; y++) {
+      dot(x, y, '#74f')
+    }
+  }
+  for (var x = 240; x < 248; x++) {
+    for (var y = 72; y < 80; y++) {
+      dot(x, y, '#75f')
+    }
+  }
+  for (var x = 248; x < 256; x++) {
+    for (var y = 72; y < 80; y++) {
+      dot(x, y, '#76f')
+    }
+  }
+  for (var x = 256; x < 264; x++) {
+    for (var y = 72; y < 80; y++) {
+      dot(x, y, '#77f')
+    }
+  }
+
+  for (var x = 264; x < 272; x++) {
+    for (var y = 72; y < 80; y++) {
+      dot(x, y, '#78f')
+    }
+  }
+  for (var x = 272; x < 280; x++) {
+    for (var y = 72; y < 80; y++) {
+      dot(x, y, '#79f')
+    }
+  }
+  for (var x = 280; x < 288; x++) {
+    for (var y = 72; y < 80; y++) {
+      dot(x, y, '#7af')
+    }
+  }
+  for (var x = 288; x < 296; x++) {
+    for (var y = 72; y < 80; y++) {
+      dot(x, y, '#7bf')
+    }
+  }
+  for (var x = 296; x < 304; x++) {
+    for (var y = 72; y < 80; y++) {
+      dot(x, y, '#7cf')
+    }
+  }
+  for (var x = 304; x < 312; x++) {
+    for (var y = 72; y < 80; y++) {
+      dot(x, y, '#7df')
+    }
+  }
+  for (var x = 312; x < 320; x++) {
+    for (var y = 72; y < 80; y++) {
+      dot(x, y, '#7ef')
+    }
+  }
+  for (var x = 320; x < 328; x++) {
+    for (var y = 72; y < 80; y++) {
+      dot(x, y, '#7ff')
+    }
+  }
+
+
+
+
+
+
+
+  for (var x = 200; x < 208; x++) {
+    for (var y = 80; y < 88; y++) {
+      dot(x, y, '#80f')
+    }
+  }
+  for (var x = 208; x < 216; x++) {
+    for (var y = 80; y < 88; y++) {
+      dot(x, y, '#81f')
+    }
+  }
+  for (var x = 216; x < 224; x++) {
+    for (var y = 80; y < 88; y++) {
+      dot(x, y, '#82f')
+    }
+  }
+  for (var x = 224; x < 232; x++) {
+    for (var y = 80; y < 88; y++) {
+      dot(x, y, '#83f')
+    }
+  }
+  for (var x = 232; x < 240; x++) {
+    for (var y = 80; y < 88; y++) {
+      dot(x, y, '#84f')
+    }
+  }
+  for (var x = 240; x < 248; x++) {
+    for (var y = 80; y < 88; y++) {
+      dot(x, y, '#85f')
+    }
+  }
+  for (var x = 248; x < 256; x++) {
+    for (var y = 80; y < 88; y++) {
+      dot(x, y, '#86f')
+    }
+  }
+  for (var x = 256; x < 264; x++) {
+    for (var y = 80; y < 88; y++) {
+      dot(x, y, '#87f')
+    }
+  }
+
+  for (var x = 264; x < 272; x++) {
+    for (var y = 80; y < 88; y++) {
+      dot(x, y, '#88f')
+    }
+  }
+  for (var x = 272; x < 280; x++) {
+    for (var y = 80; y < 88; y++) {
+      dot(x, y, '#89f')
+    }
+  }
+  for (var x = 280; x < 288; x++) {
+    for (var y = 80; y < 88; y++) {
+      dot(x, y, '#8af')
+    }
+  }
+  for (var x = 288; x < 296; x++) {
+    for (var y = 80; y < 88; y++) {
+      dot(x, y, '#8bf')
+    }
+  }
+  for (var x = 296; x < 304; x++) {
+    for (var y = 80; y < 88; y++) {
+      dot(x, y, '#8cf')
+    }
+  }
+  for (var x = 304; x < 312; x++) {
+    for (var y = 80; y < 88; y++) {
+      dot(x, y, '#8df')
+    }
+  }
+  for (var x = 312; x < 320; x++) {
+    for (var y = 80; y < 88; y++) {
+      dot(x, y, '#8ef')
+    }
+  }
+  for (var x = 320; x < 328; x++) {
+    for (var y = 80; y < 88; y++) {
+      dot(x, y, '#8ff')
+    }
+  }
+
+
+
+
+
+  for (var x = 200; x < 208; x++) {
+    for (var y = 88; y < 96; y++) {
+      dot(x, y, '#90f')
+    }
+  }
+  for (var x = 208; x < 216; x++) {
+    for (var y = 88; y < 96; y++) {
+      dot(x, y, '#91f')
+    }
+  }
+  for (var x = 216; x < 224; x++) {
+    for (var y = 88; y < 96; y++) {
+      dot(x, y, '#92f')
+    }
+  }
+  for (var x = 224; x < 232; x++) {
+    for (var y = 88; y < 96; y++) {
+      dot(x, y, '#93f')
+    }
+  }
+  for (var x = 232; x < 240; x++) {
+    for (var y = 88; y < 96; y++) {
+      dot(x, y, '#94f')
+    }
+  }
+  for (var x = 240; x < 248; x++) {
+    for (var y = 88; y < 96; y++) {
+      dot(x, y, '#95f')
+    }
+  }
+  for (var x = 248; x < 256; x++) {
+    for (var y = 88; y < 96; y++) {
+      dot(x, y, '#96f')
+    }
+  }
+  for (var x = 256; x < 264; x++) {
+    for (var y = 88; y < 96; y++) {
+      dot(x, y, '#97f')
+    }
+  }
+
+  for (var x = 264; x < 272; x++) {
+    for (var y = 88; y < 96; y++) {
+      dot(x, y, '#98f')
+    }
+  }
+  for (var x = 272; x < 280; x++) {
+    for (var y = 88; y < 96; y++) {
+      dot(x, y, '#99f')
+    }
+  }
+  for (var x = 280; x < 288; x++) {
+    for (var y = 88; y < 96; y++) {
+      dot(x, y, '#9af')
+    }
+  }
+  for (var x = 288; x < 296; x++) {
+    for (var y = 88; y < 96; y++) {
+      dot(x, y, '#9bf')
+    }
+  }
+  for (var x = 296; x < 304; x++) {
+    for (var y = 88; y < 96; y++) {
+      dot(x, y, '#9cf')
+    }
+  }
+  for (var x = 304; x < 312; x++) {
+    for (var y = 88; y < 96; y++) {
+      dot(x, y, '#9df')
+    }
+  }
+  for (var x = 312; x < 320; x++) {
+    for (var y = 88; y < 96; y++) {
+      dot(x, y, '#9ef')
+    }
+  }
+  for (var x = 320; x < 328; x++) {
+    for (var y = 88; y < 96; y++) {
+      dot(x, y, '#9ff')
+    }
+  }
+
+
+
+
+
+
+  for (var x = 200; x < 208; x++) {
+    for (var y = 96; y < 104; y++) {
+      dot(x, y, '#a0f')
+    }
+  }
+  for (var x = 208; x < 216; x++) {
+    for (var y = 96; y < 104; y++) {
+      dot(x, y, '#a1f')
+    }
+  }
+  for (var x = 216; x < 224; x++) {
+    for (var y = 96; y < 104; y++) {
+      dot(x, y, '#a2f')
+    }
+  }
+  for (var x = 224; x < 232; x++) {
+    for (var y = 96; y < 104; y++) {
+      dot(x, y, '#a3f')
+    }
+  }
+  for (var x = 232; x < 240; x++) {
+    for (var y = 96; y < 104; y++) {
+      dot(x, y, '#a4f')
+    }
+  }
+  for (var x = 240; x < 248; x++) {
+    for (var y = 96; y < 104; y++) {
+      dot(x, y, '#a5f')
+    }
+  }
+  for (var x = 248; x < 256; x++) {
+    for (var y = 96; y < 104; y++) {
+      dot(x, y, '#a6f')
+    }
+  }
+  for (var x = 256; x < 264; x++) {
+    for (var y = 96; y < 104; y++) {
+      dot(x, y, '#a7f')
+    }
+  }
+
+  for (var x = 264; x < 272; x++) {
+    for (var y = 96; y < 104; y++) {
+      dot(x, y, '#a8f')
+    }
+  }
+  for (var x = 272; x < 280; x++) {
+    for (var y = 96; y < 104; y++) {
+      dot(x, y, '#a9f')
+    }
+  }
+  for (var x = 280; x < 288; x++) {
+    for (var y = 96; y < 104; y++) {
+      dot(x, y, '#aaf')
+    }
+  }
+  for (var x = 288; x < 296; x++) {
+    for (var y = 96; y < 104; y++) {
+      dot(x, y, '#abf')
+    }
+  }
+  for (var x = 296; x < 304; x++) {
+    for (var y = 96; y < 104; y++) {
+      dot(x, y, '#acf')
+    }
+  }
+  for (var x = 304; x < 312; x++) {
+    for (var y = 96; y < 104; y++) {
+      dot(x, y, '#adf')
+    }
+  }
+  for (var x = 312; x < 320; x++) {
+    for (var y = 96; y < 104; y++) {
+      dot(x, y, '#aef')
+    }
+  }
+  for (var x = 320; x < 328; x++) {
+    for (var y = 96; y < 104; y++) {
+      dot(x, y, '#aff')
+    }
+  }
+
+
+
+
+  for (var x = 200; x < 208; x++) {
+    for (var y = 104; y < 112; y++) {
+      dot(x, y, '#b0f')
+    }
+  }
+  for (var x = 208; x < 216; x++) {
+    for (var y = 104; y < 112; y++) {
+      dot(x, y, '#b1f')
+    }
+  }
+  for (var x = 216; x < 224; x++) {
+    for (var y = 104; y < 112; y++) {
+      dot(x, y, '#b2f')
+    }
+  }
+  for (var x = 224; x < 232; x++) {
+    for (var y = 104; y < 112; y++) {
+      dot(x, y, '#b3f')
+    }
+  }
+  for (var x = 232; x < 240; x++) {
+    for (var y = 104; y < 112; y++) {
+      dot(x, y, '#b4f')
+    }
+  }
+  for (var x = 240; x < 248; x++) {
+    for (var y = 104; y < 112; y++) {
+      dot(x, y, '#b5f')
+    }
+  }
+  for (var x = 248; x < 256; x++) {
+    for (var y = 104; y < 112; y++) {
+      dot(x, y, '#b6f')
+    }
+  }
+  for (var x = 256; x < 264; x++) {
+    for (var y = 104; y < 112; y++) {
+      dot(x, y, '#b7f')
+    }
+  }
+
+  for (var x = 264; x < 272; x++) {
+    for (var y = 104; y < 112; y++) {
+      dot(x, y, '#b8f')
+    }
+  }
+  for (var x = 272; x < 280; x++) {
+    for (var y = 104; y < 112; y++) {
+      dot(x, y, '#b9f')
+    }
+  }
+  for (var x = 280; x < 288; x++) {
+    for (var y = 104; y < 112; y++) {
+      dot(x, y, '#baf')
+    }
+  }
+  for (var x = 288; x < 296; x++) {
+    for (var y = 104; y < 112; y++) {
+      dot(x, y, '#bbf')
+    }
+  }
+  for (var x = 296; x < 304; x++) {
+    for (var y = 104; y < 112; y++) {
+      dot(x, y, '#bcf')
+    }
+  }
+  for (var x = 304; x < 312; x++) {
+    for (var y = 104; y < 112; y++) {
+      dot(x, y, '#bdf')
+    }
+  }
+  for (var x = 312; x < 320; x++) {
+    for (var y = 104; y < 112; y++) {
+      dot(x, y, '#bef')
+    }
+  }
+  for (var x = 320; x < 328; x++) {
+    for (var y = 104; y < 112; y++) {
+      dot(x, y, '#bff')
+    }
+  }
+
+
+
+
+
+
+  for (var x = 200; x < 208; x++) {
+    for (var y = 112; y < 120; y++) {
+      dot(x, y, '#c0f')
+    }
+  }
+  for (var x = 208; x < 216; x++) {
+    for (var y = 112; y < 120; y++) {
+      dot(x, y, '#c1f')
+    }
+  }
+  for (var x = 216; x < 224; x++) {
+    for (var y = 112; y < 120; y++) {
+      dot(x, y, '#c2f')
+    }
+  }
+  for (var x = 224; x < 232; x++) {
+    for (var y = 112; y < 120; y++) {
+      dot(x, y, '#c3f')
+    }
+  }
+  for (var x = 232; x < 240; x++) {
+    for (var y = 112; y < 120; y++) {
+      dot(x, y, '#c4f')
+    }
+  }
+  for (var x = 240; x < 248; x++) {
+    for (var y = 112; y < 120; y++) {
+      dot(x, y, '#c5f')
+    }
+  }
+  for (var x = 248; x < 256; x++) {
+    for (var y = 112; y < 120; y++) {
+      dot(x, y, '#c6f')
+    }
+  }
+  for (var x = 256; x < 264; x++) {
+    for (var y = 112; y < 120; y++) {
+      dot(x, y, '#c7f')
+    }
+  }
+
+  for (var x = 264; x < 272; x++) {
+    for (var y = 112; y < 120; y++) {
+      dot(x, y, '#c8f')
+    }
+  }
+  for (var x = 272; x < 280; x++) {
+    for (var y = 112; y < 120; y++) {
+      dot(x, y, '#c9f')
+    }
+  }
+  for (var x = 280; x < 288; x++) {
+    for (var y = 112; y < 120; y++) {
+      dot(x, y, '#caf')
+    }
+  }
+  for (var x = 288; x < 296; x++) {
+    for (var y = 112; y < 120; y++) {
+      dot(x, y, '#cbf')
+    }
+  }
+  for (var x = 296; x < 304; x++) {
+    for (var y = 112; y < 120; y++) {
+      dot(x, y, '#ccf')
+    }
+  }
+  for (var x = 304; x < 312; x++) {
+    for (var y = 112; y < 120; y++) {
+      dot(x, y, '#cdf')
+    }
+  }
+  for (var x = 312; x < 320; x++) {
+    for (var y = 112; y < 120; y++) {
+      dot(x, y, '#cef')
+    }
+  }
+  for (var x = 320; x < 328; x++) {
+    for (var y = 112; y < 120; y++) {
+      dot(x, y, '#cff')
+    }
+  }
+
+
+
+
+
+  for (var x = 200; x < 208; x++) {
+    for (var y = 120; y < 128; y++) {
+      dot(x, y, '#d0f')
+    }
+  }
+  for (var x = 208; x < 216; x++) {
+    for (var y = 120; y < 128; y++) {
+      dot(x, y, '#d1f')
+    }
+  }
+  for (var x = 216; x < 224; x++) {
+    for (var y = 120; y < 128; y++) {
+      dot(x, y, '#d2f')
+    }
+  }
+  for (var x = 224; x < 232; x++) {
+    for (var y = 120; y < 128; y++) {
+      dot(x, y, '#d3f')
+    }
+  }
+  for (var x = 232; x < 240; x++) {
+    for (var y = 120; y < 128; y++) {
+      dot(x, y, '#d4f')
+    }
+  }
+  for (var x = 240; x < 248; x++) {
+    for (var y = 120; y < 128; y++) {
+      dot(x, y, '#d5f')
+    }
+  }
+  for (var x = 248; x < 256; x++) {
+    for (var y = 120; y < 128; y++) {
+      dot(x, y, '#d6f')
+    }
+  }
+  for (var x = 256; x < 264; x++) {
+    for (var y = 120; y < 128; y++) {
+      dot(x, y, '#d7f')
+    }
+  }
+
+  for (var x = 264; x < 272; x++) {
+    for (var y = 120; y < 128; y++) {
+      dot(x, y, '#d8f')
+    }
+  }
+  for (var x = 272; x < 280; x++) {
+    for (var y = 120; y < 128; y++) {
+      dot(x, y, '#d9f')
+    }
+  }
+  for (var x = 280; x < 288; x++) {
+    for (var y = 120; y < 128; y++) {
+      dot(x, y, '#daf')
+    }
+  }
+  for (var x = 288; x < 296; x++) {
+    for (var y = 120; y < 128; y++) {
+      dot(x, y, '#dbf')
+    }
+  }
+  for (var x = 296; x < 304; x++) {
+    for (var y = 120; y < 128; y++) {
+      dot(x, y, '#dcf')
+    }
+  }
+  for (var x = 304; x < 312; x++) {
+    for (var y = 120; y < 128; y++) {
+      dot(x, y, '#ddf')
+    }
+  }
+  for (var x = 312; x < 320; x++) {
+    for (var y = 120; y < 128; y++) {
+      dot(x, y, '#def')
+    }
+  }
+  for (var x = 320; x < 328; x++) {
+    for (var y = 120; y < 128; y++) {
+      dot(x, y, '#dff')
+    }
+  }
+
+
+
+
+
+  for (var x = 200; x < 208; x++) {
+    for (var y = 128; y < 136; y++) {
+      dot(x, y, '#e0f')
+    }
+  }
+  for (var x = 208; x < 216; x++) {
+    for (var y = 128; y < 136; y++) {
+      dot(x, y, '#e1f')
+    }
+  }
+  for (var x = 216; x < 224; x++) {
+    for (var y = 128; y < 136; y++) {
+      dot(x, y, '#e2f')
+    }
+  }
+  for (var x = 224; x < 232; x++) {
+    for (var y = 128; y < 136; y++) {
+      dot(x, y, '#e3f')
+    }
+  }
+  for (var x = 232; x < 240; x++) {
+    for (var y = 128; y < 136; y++) {
+      dot(x, y, '#e4f')
+    }
+  }
+  for (var x = 240; x < 248; x++) {
+    for (var y = 128; y < 136; y++) {
+      dot(x, y, '#e5f')
+    }
+  }
+  for (var x = 248; x < 256; x++) {
+    for (var y = 128; y < 136; y++) {
+      dot(x, y, '#e6f')
+    }
+  }
+  for (var x = 256; x < 264; x++) {
+    for (var y = 128; y < 136; y++) {
+      dot(x, y, '#e7f')
+    }
+  }
+
+  for (var x = 264; x < 272; x++) {
+    for (var y = 128; y < 136; y++) {
+      dot(x, y, '#e8f')
+    }
+  }
+  for (var x = 272; x < 280; x++) {
+    for (var y = 128; y < 136; y++) {
+      dot(x, y, '#e9f')
+    }
+  }
+  for (var x = 280; x < 288; x++) {
+    for (var y = 128; y < 136; y++) {
+      dot(x, y, '#eaf')
+    }
+  }
+  for (var x = 288; x < 296; x++) {
+    for (var y = 128; y < 136; y++) {
+      dot(x, y, '#ebf')
+    }
+  }
+  for (var x = 296; x < 304; x++) {
+    for (var y = 128; y < 136; y++) {
+      dot(x, y, '#ecf')
+    }
+  }
+  for (var x = 304; x < 312; x++) {
+    for (var y = 128; y < 136; y++) {
+      dot(x, y, '#edf')
+    }
+  }
+  for (var x = 312; x < 320; x++) {
+    for (var y = 128; y < 136; y++) {
+      dot(x, y, '#eef')
+    }
+  }
+  for (var x = 320; x < 328; x++) {
+    for (var y = 128; y < 136; y++) {
+      dot(x, y, '#eff')
+    }
+  }
+
+
+
+
+
+  for (var x = 200; x < 208; x++) {
+    for (var y = 136; y < 144; y++) {
+      dot(x, y, '#f0f')
+    }
+  }
+  for (var x = 208; x < 216; x++) {
+    for (var y = 136; y < 144; y++) {
+      dot(x, y, '#f1f')
+    }
+  }
+  for (var x = 216; x < 224; x++) {
+    for (var y = 136; y < 144; y++) {
+      dot(x, y, '#f2f')
+    }
+  }
+  for (var x = 224; x < 232; x++) {
+    for (var y = 136; y < 144; y++) {
+      dot(x, y, '#f3f')
+    }
+  }
+  for (var x = 232; x < 240; x++) {
+    for (var y = 136; y < 144; y++) {
+      dot(x, y, '#f4f')
+    }
+  }
+  for (var x = 240; x < 248; x++) {
+    for (var y = 136; y < 144; y++) {
+      dot(x, y, '#f5f')
+    }
+  }
+  for (var x = 248; x < 256; x++) {
+    for (var y = 136; y < 144; y++) {
+      dot(x, y, '#f6f')
+    }
+  }
+  for (var x = 256; x < 264; x++) {
+    for (var y = 136; y < 144; y++) {
+      dot(x, y, '#f7f')
+    }
+  }
+
+  for (var x = 264; x < 272; x++) {
+    for (var y = 136; y < 144; y++) {
+      dot(x, y, '#f8f')
+    }
+  }
+  for (var x = 272; x < 280; x++) {
+    for (var y = 136; y < 144; y++) {
+      dot(x, y, '#f9f')
+    }
+  }
+  for (var x = 280; x < 288; x++) {
+    for (var y = 136; y < 144; y++) {
+      dot(x, y, '#faf')
+    }
+  }
+  for (var x = 288; x < 296; x++) {
+    for (var y = 136; y < 144; y++) {
+      dot(x, y, '#fbf')
+    }
+  }
+  for (var x = 296; x < 304; x++) {
+    for (var y = 136; y < 144; y++) {
+      dot(x, y, '#fcf')
+    }
+  }
+  for (var x = 304; x < 312; x++) {
+    for (var y = 136; y < 144; y++) {
+      dot(x, y, '#fdf')
+    }
+  }
+  for (var x = 312; x < 320; x++) {
+    for (var y = 136; y < 144; y++) {
+      dot(x, y, '#fef')
+    }
+  }
+  for (var x = 320; x < 328; x++) {
+    for (var y = 136; y < 144; y++) {
+      dot(x, y, '#fff')
+    }
+  }
+
+
+
+  //画一个rgb色彩空间的某一面 使用for循环
+  for (var i = 10; i < 138; i++) {
+    dot(i, 80)
+  }
+  for (var i = 10; i < 138; i++) {
+    dot(i, 208)
+  }
+  for (var i = 80; i < 208; i++) {
+    dot(10, i)
+  }
+  for (var i = 80; i < 208; i++) {
+    dot(138, i)
+  }
+
+  for (var y = 10; y < 138; y++) {
+    dot(y, 85)
+  }
+
+  //画一个空心的圆
+
+
+
+
+
+  for (var i = 0; i < 400; i++) {
+    dot((i - 100) ** 2, 10000 - (i - 100) ** 2, 'red')
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
