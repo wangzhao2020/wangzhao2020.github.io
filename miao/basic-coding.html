@@ -1712,26 +1712,39 @@
 </script>
 
 
-<script xtype="norun" id="ch0105/45">
+<script type="norun" id="ch0105/45">
 
 
   var n = Number(prompt('请输入正整数n表示天数 '))
-  var a = 1
+  var x = 0
   var sum = 0
-  var isNagative = false
-  var money = 0
-  var moneytotle = 0
+  var sumtotle = 0
 
-
-  if (sum == n) {
-    for (var i = 0; i <= n; i++) {
-      moneytotle = moneytotle + i * i
+  for (var a = 1; true; a++) { // a为每一列的数字数量
+    console.log('a' + a)
+    for (var i = 1; i <= a; i++) {  // x 为每一列的数字
+      console.log('x' + x)
+      if (x == n) {     //当x==n时，可以确定a的值
+        break
+      }
+      x++
+    }
+    if (x == n) {
+      break
     }
   }
-
-  console.log(moneytotle)
-
-
-
+  var xs = 1
+  for (var as = 1; as <= a; as++) { // a确定时，得出这一列最后一个x是多少
+    console.log('a' + as)
+    for (var i = 1; i <= as; i++) {
+      console.log('x' + xs)
+      xs++
+    }
+  }
+  for (var j = 1; j <= a; j++) {
+    sum = sum + j * j
+  }
+  sumtotle = sum - ((xs - 1) - x) * a  //a确定，并确定xs(本列最后x的值)，即可得出差值
+  console.log(sumtotle)
 
 </script>
