@@ -1377,6 +1377,7 @@
       }
     }
   }
+
   if (count == 3) {
     console.log('YES')
   } else {
@@ -1396,14 +1397,20 @@
 
 
 
-  
+
+
 
 
 //如何记录每盏灯的数据，每盏灯需要记录true和false
+//对各自倍数做切换操作，
+//做题思路：对每个灯有多少次调节
+//，这个目前的知识还无法解决   可以使用 .slice(0,-1)删除最后一个逗号
+
+
 </script>
 
 
-<script type="norun" id="ch0105/32">
+<script xtype="norun" id="ch0105/32">
 
   var n = Number(prompt('请输入整数n （1<=n<30'))
   var pn = 0
@@ -1416,12 +1423,39 @@
   } else {
     for (var i = 2; i <= n; i++) {
       qn = p + q
-      pn = q
-      sum = sum + qn / pn
-      p = pn
-      q = qn
+      pn = q                  //换位置
+      sum = sum + qn / pn     //计算公式并求和
+      p = pn                  //换位置
+      q = qn                  //换位置
 
     }
+  }
+  console.log(sum.toFixed(4))
+
+
+
+
+
+</script>
+
+
+
+<script type="norun" id="ch0105/32-1">
+
+  var n = Number(prompt('请输入整数n （1<=n<30'))
+  var pn = 0
+  var qn = 0
+  var p = 1
+  var q = 2
+  var sum = 2
+
+  for (var i = 1; i <= n; i++) {
+    qn = p + q
+    pn = q                  //换位置
+    sum = sum + qn / pn     //计算公式并求和
+    p = pn                  //换位置
+    q = qn                  //换位置
+
   }
   console.log(sum.toFixed(4))
 
@@ -1437,7 +1471,7 @@
   var sum = 0
 
   for (var i = 1; i <= n; i++) {
-    if (i % 2 == 0) {
+    if (i % 2 == 0) {  //如果为偶数i变为负值
       i = -i
     }
     sum = sum + 1 / i
@@ -1456,7 +1490,7 @@
   var sumtotle = 0
 
   for (var m = 1; m <= n; m++) {
-    for (var i = 1; i <= m; i++) {
+    for (var i = 1; i <= m; i++) {   // 数字m的阶乘
       sum = sum * i
     }
     sumtotle = sumtotle + sum
@@ -1532,13 +1566,18 @@
 //语文太差，这个题花了1个半小时才完成，前1个小时把题个理解错了，
 //要充分理解题还需要结合案例去理解。
 
+//谢然说题看不懂，直接不讲了，早知道我也不做了
 
 
 </script>
 
 
 <script type="norun" id="ch0105/38">
+  var m = Number(prompt('请输入整数m '))
 
+  for( )
+
+  var n = Number(prompt('请输入整数n '))
 
 
 </script>
@@ -1552,7 +1591,7 @@
   var digit = 0
   var isNegative = false
   var m = 0
-  
+
   for (var i = 1; i <= n; i++) {
     m = i
     while (m > 0) {
@@ -1634,29 +1673,69 @@
 <script type="norun" id="ch0105/42">
   var h = Number(prompt('请输入整数高h '))
   var w = Number(prompt('请输入整数宽w '))
-  var n = String(prompt('请输入符号 '))
+  var char = prompt()
+  var fill = Number(prompt(' '))
+
+  var a = char
+  var b = char
+
+  for( var i = 0; i < w - 2;i++){
+    a += char
+
+    b += ' '
+  }
+
+  a += char
+  b += char
+
+
+
+
+
 
   for (var i = 1; i <= h; i++) {
     for (var i = 1; i <= w; i++) {
       console.log(n)
-    } 
+    }
     console.log('\n')
   }
 
 
-
+//可以拼菱形
 
 
 
 </script>
 
 
-<script type="norun" id="ch0105/43">
+<script xtype="norun" id="ch0105/43">
+
+  var n = Number(prompt('请输入正整数n '))
+  var sqrt_n = Math.sqrt(n)
+  debugger
+
+  for (var i = 2; i <= sqrt_n; i++) {
+    if (n % i == 0) {
+      n = n / i
+      break
+    }
+  }
+  console.log(n)
+
+
+//这个题n是2个不同的质数的乘积，因此n只能被1 这2个质数和它本身除尽，因此
+//直接进行循环第一个不是1除尽的数即小的质数
+//谢然理解成了n是多个不同的质数的乘积。
+
+
+</script>
+<script xtype="norun" id="ch0105/43-1">
 
   var n = Number(prompt('请输入两个不同的质数的乘积n '))
   var a
   var p
   var count = 0
+
   for (var a = 1; a <= n; a++) {
     for (var i = 1; i <= a; i++) {
       if (a % i == 0) {
@@ -1672,13 +1751,38 @@
     count = 0
   }
 
+</script>
 
+<script type="norun" id="ch0105/44">
+
+  var n = Number(prompt('请输入正整数n '))
+  var countn = 0
+  debugger
+  for (var i = 2; ; i++) {
+    var isNagetive = true
+    for (var j = 2; j <= Math.sqrt(i); j++) {
+      if (i % j == 0) {
+        isNagetive = false
+        break
+      }
+    }
+    if (isNagetive) {   //a为质数时，countn 加1
+      countn++
+      if (countn == n) {
+        console.log(i)
+        break
+      }
+    }
+  }
+
+//判断质数使用 i/2 或者 Math.sqrt(i) 注意是 <=
 
 
 </script>
 
 
-<script type="norun" id="ch0105/44">
+
+<script xtype="norun" id="ch0105/44-1">
 
   var n = Number(prompt('请输入正整数n '))
   var a = 1
@@ -1687,7 +1791,7 @@
   var isNagetive = false
   debugger
   while (!isNagetive) {  // 第n个质数出现时，结束while循环
-    for (var i = 1; i <= a; i++) {   //判断a是否为质数
+    for (var i = 1; i <= a / 2; i++) {   //判断a是否为质数
       if (a % i == 0) {
         count++
       }
@@ -1711,8 +1815,33 @@
 
 </script>
 
-
 <script type="norun" id="ch0105/45">
+
+  var d = Number(prompt())
+  var sum = 0
+  var coin = 1 //某天给的金币数量/面额
+  var day = 0 //这种金币已经给了几天
+  var count = 1//这种金币要连续给多少天
+  debugger
+  for (var i = 1; i <= d; i++) {
+    sum += coin
+    day++
+    if (day === count) {
+      coin++
+      count++
+      day = 0
+    }
+  }
+  console.log(sum)
+
+
+//方法，模拟骑士拿金币，第一次写的时候是将所有金币列出，没有按照实际的情况，
+//把整个过程想象的过于复杂，目前这个方法也很巧妙，第一次基本写不出来
+</script>
+
+
+
+<script type="norun" id="ch0105/45-1">
 
 
   var n = Number(prompt('请输入正整数n表示天数 '))
@@ -1720,9 +1849,9 @@
   var sum = 0
   var sumtotle = 0
 
-  for (var a = 1; true; a++) { // a为每一列的数字数量
+  for (var a = 1; true; a++) { // a为每一列的数字数量，即天数
     console.log('a' + a)
-    for (var i = 1; i <= a; i++) {  // x 为每一列的数字
+    for (var i = 1; i <= a; i++) {  // x 为某天的金币数量
       console.log('x' + x)
       if (x == n) {     //当x==n时，可以确定a的值
         break
@@ -1746,5 +1875,16 @@
   }
   sumtotle = sum - ((xs - 1) - x) * a  //a确定，并确定xs(本列最后x的值)，即可得出差值
   console.log(sumtotle)
+
+</script>
+
+
+<script xtype="norun" id="sqrt">
+  var n = Number(prompt('请输入正整数n表示天数 '))
+  var sqrt = function (n) {
+    return Math.sqrt(n)
+  }
+  console.log(sqrt(n))
+
 
 </script>
