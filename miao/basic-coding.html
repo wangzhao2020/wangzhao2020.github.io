@@ -1879,12 +1879,188 @@
 </script>
 
 
-<script xtype="norun" id="sqrt">
-  var n = Number(prompt('请输入正整数n表示天数 '))
-  var sqrt = function (n) {
-    return Math.sqrt(n)
+<script xtype="norun" id="sqrt"> //求一个正数的平方根
+  //采用二分法进行计算
+  var n = Number(prompt('请输入正整数n '))
+
+  function sqrt(n) {
+    var l = 0
+    var r = n
   }
-  console.log(sqrt(n))
 
 
+
+</script>
+
+
+
+
+
+<script xtype="norun" id="narcissistic">//写一个函数判断一个数是否为水仙花数
+
+
+
+</script>
+
+<script xtype="norun" id="narcissistics">//输出10000以内的所有水仙花数
+
+
+</script>
+
+<script xtype="norun" id="palindrom">//写函数求阶乘
+
+
+</script>
+<script xtype="norun" id="weekday">//给写年和月，计算这个月的第一天是星期几
+
+  function week(x) {
+    //先计算3到12月的 例如x为202011 需要年份前两位c,年份后两位y，月m，d日(本题默认为1)
+    //不知道怎么分别吧20  20  11给分离出来
+    for (let i = 0; i < 2; i++) {
+      let y = 0
+      let digit = x % 10
+      let x = (x - digit) / 10
+      y = y * 10 + digit
+    }
+
+
+
+    //1月和2月需要作为上一年的13/14月
+
+
+
+
+
+  }
+
+
+
+
+
+</script>
+<script xtype="norun" id="complete-number">//写一个函数求一个数是否为完全数（它的因子之和等于它自己）
+
+  function complete_number(n) {
+    let sum = 1
+    for (let i = 2; i <= Math.sqrt(n); i++) {//n的因子只可能小于等于n/2，因此可以将范围设置的小一些
+      if (n % i == 0) {               //1确定为n的因子，因此sum设置为1，i从2开始计算
+        let j = n / i                 //根号n可以缩小范围，并且根号左边的因子跟右边的因子相乘为n，如果得到i即可得到j=n/i    
+        if (i == j) {     //i如果等于j，和会存在重叠加的情况，加一次即可
+          sum += j
+        } else {
+          sum += i + j
+        }
+        if (sum > n) {
+          return false
+        }
+      }
+    }
+    return sum == n  //  因为sum == n 时返回true,因此可以直接写为 return sum == n
+  }
+
+
+</script>
+<script xtype="norun" id="complete-numbers">//输出1000以内的所有完数
+
+
+  for (let i = 1; i <= 1000; i++) {
+    if (complete_number(i)) {
+      console.log(i)
+    }
+  }
+
+
+
+</script>
+
+<script xtype="norun" id="prime">// 判断素数
+
+  let n = Number(prompt())
+  let isNagetive = true
+  debugger
+
+  let prime = function (x) {   //判断素数，素数返回true，否则返回false
+    for (let i = 2; i <= Math.sqrt(x); i++) {
+      if (x % i == 0) {
+        isNagetive = false
+        return isNagetive
+        break
+      }
+    }
+    return isNagetive
+
+  }
+
+  console.log(prime(n))
+
+</script>
+
+<script xtype="norun" id="primes">//输出1000以内的素数
+
+
+  let n = Number(prompt())
+  let isNagetive = true
+  debugger
+
+  let prime = function (x) {   //判断素数，素数返回true，否则返回false
+    for (let i = 2; i <= Math.sqrt(x); i++) {
+      isNagetive = true
+
+      if (x % i == 0) {
+        isNagetive = false
+        return isNagetive
+        break
+      }
+    }
+    return isNagetive
+  }
+
+  for (let m = 2; m <= n; m++) {
+    if (prime(m) == true) {
+      console.log(m)
+    }
+  }
+
+
+
+
+
+
+</script>
+
+
+<script xtype="norun" id="itob">//不使用隐式类型转换将一个数字转换为字符串
+
+
+
+
+</script>
+
+
+
+
+
+<script xtype="norun" id="lcf">//写函数求出两个数的最大公约数
+
+  function lcf(m, n) {
+    let min = m > n ? n : m   //选择m,n中较小的一个 三元运算符
+    for (let i = min; i > 0; i--) { //for循环从min开始，不断的递减，第一个能同时被m,n除尽的数为两个数的最大公约数
+      if (n % i == 0 && m % i == 0) {
+        return i
+      }
+    }
+  }
+  //输入 lcf(50,70)即可得到两个数的最大公约数
+
+</script>
+
+<script xtype="norun" id="lcm">//写函数求出两个数的最小公倍数
+  //使用原理：两个数的乘积等于这两个数的最大公约数与最小公倍数的乘积。
+
+  function lcm(m, n) {
+    let l = m * n / lcf(m, n)
+    return l
+  }
+
+  // 输入 lcm(50,70)即可得到两个数的最小公倍数
 </script>
