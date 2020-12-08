@@ -475,6 +475,9 @@
   }
 
 
+
+
+
   console.log(y.toFixed(3))
   //可以进行优化，也可以从大范围开始写
 </script>
@@ -1898,6 +1901,48 @@
 
 <script xtype="norun" id="narcissistic">//写一个函数判断一个数是否为水仙花数
 
+  debugger
+
+  function bitWide(n) { //位宽：确定n是几位的数字
+    let count = 0
+    let digit
+
+    do {  //需要考虑0和1 ，因此使用do while 即使是0 count也会计算一次 
+      digit = n % 10
+      n = (n - digit) / 10
+      count++
+    } while (n > 0)
+    return count
+  }
+
+
+  function narcissistic(n) {
+    let m = n       //n需要在最后进行比较，因此需要赋给m，让m进行计算
+    let cube = 1    //多次幂的值
+    let sum = 0     //不同位多次幂相加的值
+    let digit = 0   //n的余数
+
+    do { //需要考虑m为0 的情况，需要使用
+      digit = m % 10
+
+      for (let i = 1; i <= bitWide(n); i++) {  //先确定n的位宽，然后计算其多次幂
+        cube *= digit
+      }
+      sum += cube
+      cube = 1
+      m = (m - digit) / 10
+    } while (m > 0)
+    if (sum == n) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+
+
+
+
 
 
 </script>
@@ -1905,23 +1950,91 @@
 <script xtype="norun" id="narcissistics">//输出10000以内的所有水仙花数
 
 
+  for (let i = 1; i <= 10000; i++) {
+    if (narcissistic(i)) {
+      console.log(i)
+    }
+  }
+
+
 </script>
 
-<script xtype="norun" id="palindrom">//写函数求阶乘
+<script xtype="norun" id="pactorial">//写函数求阶乘
+
+  function pactorial(n) {
+    let result = 1
+    for (let i = 1; i <= n; i++) {
+      result *= i
+    }
+    return result
+  }
 
 
 </script>
+
+
+
+
+
+<script xtype="norun" id="palindrom">//写函数求回文字
+  debugger
+  function palindrom(n) {
+
+    let result = 0
+    let digit = 0
+    let m = n
+    while (m > 0) {
+      digit = m % 10
+      result = result * 10 + digit
+      m = (m - digit) / 10
+
+    }
+    if (result == n) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+
+</script>
+
+
+
+<script xtype="norun" id="palindrom-1">//写函数求回文字  用字符串
+  debugger
+  function palindrom(n) {
+
+    let result = ''
+    let digit = 0
+    let m = n
+    while (m > 0) {
+      digit = m % 10
+      result = result + digit
+      m = (m - digit) / 10
+
+    }
+    if (result == n) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+
+</script>
+
+
+
+
 <script xtype="norun" id="weekday">//给写年和月，计算这个月的第一天是星期几
 
   function week(x) {
     //先计算3到12月的 例如x为202011 需要年份前两位c,年份后两位y，月m，d日(本题默认为1)
-    //不知道怎么分别吧20  20  11给分离出来
-    for (let i = 0; i < 2; i++) {
-      let y = 0
-      let digit = x % 10
-      let x = (x - digit) / 10
-      y = y * 10 + digit
-    }
+    //不知道怎么分别吧20  20  11给分离出来 ,用公式一次弄出来没有想出来，直接分别进行计算
+    let c = Math.floor(x / 10000)
+    let y = Math.floor(x / 100) - c * 100
+    let m = x % 100
 
 
 
@@ -2033,6 +2146,54 @@
 
 
 
+  function n2c(n) {
+    if (n == 0) {
+      return '0'
+    }
+    if (n == 1) {
+      return '1'
+    }
+    if (n == 2) {
+      return '2'
+    }
+    if (n == 3) {
+      return '3'
+    }
+    if (n == 4) {
+      return '4'
+    }
+    if (n == 5) {
+      return '5'
+    }
+    if (n == 6) {
+      return '6'
+    }
+    if (n == 7) {
+      return '7'
+    }
+    if (n == 8) {
+      return '8'
+    }
+    if (n == 9) {
+      return '9'
+    }
+  }
+
+
+  debugger
+  function itob(n) {
+    let result = ''
+    do {
+      let d = n % 10   //d为个位数 
+      result = n2c(d) + result
+      n = (n - d)
+      n = n / 10
+    } while (n > 0)
+    return result
+  }
+
+
+
 
 </script>
 
@@ -2053,6 +2214,50 @@
   //输入 lcf(50,70)即可得到两个数的最大公约数
 
 </script>
+
+
+<script xtype="norun" id="lcf-1">//写函数求出两个数的最大公约数
+  //使用辗转相减法求最大公约数
+  debugger
+  function lcf(m, n) {  //先默认m>n
+    //凑
+    if (m < n) { //如果m<n 将m,n进行调换
+      let a = 0
+      a = m
+      m = n
+      n = a
+    }
+
+    //使用let定义，如果放在while循环外面，是可以进行运算的，它的范围在自身外层大括号
+    while (true) { //如果放到循环里边，又存在value值无法判断
+
+      let value = m - n //  经过调试，这个不需要while根据value进行判断，直接while(true)即可，因此使用let没有问题
+      if (value == 0) {
+        return n
+      }
+      if (value < n) {
+        m = n
+        n = value
+      } else {
+        m = value
+      }
+    }
+  }
+
+
+  //输入 lcf(70,50)即可得到两个数的最大公约数
+
+  debugger
+  let a = 10
+  while (a > 0) {
+    a -= 1
+  }
+
+
+
+</script>
+
+
 
 <script xtype="norun" id="lcm">//写函数求出两个数的最小公倍数
   //使用原理：两个数的乘积等于这两个数的最大公约数与最小公倍数的乘积。
