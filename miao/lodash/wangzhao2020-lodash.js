@@ -129,7 +129,7 @@ var wangzhao2020 = function () {//将compace函数写到函数里边，最后返
     //属性名与变量名相同时，compact: compact, 可以写为compact,
     //返回的compact属性为compact变量读到的compact函数;
     compact,
-    chunk，
+    chunk,
     drop,
     dropRight,
     every,
