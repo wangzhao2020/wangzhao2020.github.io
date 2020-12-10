@@ -120,9 +120,104 @@ var wangzhao2020 = function () {//将compace函数写到函数里边，最后返
     return array
   }
 
+  //输出数组的第1个元素
+  function head(array) {
+    return array[0]
+  }
+
+  //共3个参数，数组，value，fromIndex开始查询的位置（为负则从后往前查询）
+  function indexOf(array, value, fromIndex = 0) {
+    //先从fromIndex的正负进行判断
+
+    var a = false
+    if (fromIndex >= 0) {
+      for (var i = fromIndex; i < array.length; i++) {
+        if (array[i] == value) {
+          a = true
+          return i
+        }
+      }
+    } else {
+      for (var i = array.length + fromIndex; i < array.length; i++) {
+        if (array[i] == value) {
+          a = true
+          return i
+        }
+      }
+    }
+    if (a == false) {
+      return -1
+    }
+  }
+
+  //删除数组最后一个元素并返回
+  function initial(array) {
+    //使用循环，push到倒数第二个元素
+    var result = []
+    for (var i = 0; i < array.length - 1; i++) {
+      result.push(array[i])
+    }
+    return result
+  }
+
+  //将数组中的元素转为，用separator的字符串
+  function join(array, separator) {
+    //新建一个字符串，然后循环叠加数组元素和分隔符,最后一个元素不加分隔符
+    var result = ''
+    for (var i = 0; i < array.length - 1; i++) {
+      result += array[i] + separator
+    }
+    return result + array[i]
+  }
+
+  //输出数组最后一个元素
+  function last(array) {
+    //直接根据长度返回最后一个数组
+    return array[array.length - 1]
+  }
+
+  //类似于indexOf,区别是从后往前遍历
+  function lastIndexOf(array, value, fromIndex = array.length - 1) {
+    //先从fromIndex的正负进行判断
+
+    var a = false
+    if (fromIndex >= 0) {
+      for (var i = fromIndex; i > 0; i--) {
+        if (array[i] == value) {
+          a = true
+          return i
+        }
+      }
+    } else {
+      for (var i = array.length + fromIndex; i > 0; i--) {
+        if (array[i] == value) {
+          a = true
+          return i
+        }
+      }
+    }
+    if (a == false) {
+      return -1
+    }
+  }
+
+  //返回数组中的最大值，如果数组为空或假值返回underfined
+  function max(array) {
+    //设置最大值，并循环数组元素进行对比，
+    if (array.length == 0) {
+      return undefined
+    }
+    var m = -Infinity
+    for (var i = 0; i < array.length; i++) {
+      if (!array[i]) {
+        return undefined
+      }
+      m = (array[i] > m ? array[i] : m)
+    }
+    return m
+  }
+
   //
-
-
 
 
   return {
@@ -139,6 +234,13 @@ var wangzhao2020 = function () {//将compace函数写到函数里边，最后返
     findLastIndex,
     filter,
     fill,
+    head,
+    indexOf,
+    initial,
+    join,
+    last,
+    lastIndexOf,
+    max,
 
 
 
