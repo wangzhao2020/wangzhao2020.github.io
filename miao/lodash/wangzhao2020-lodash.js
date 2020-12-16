@@ -120,12 +120,12 @@ var wangzhao2020 = function () {//将compace函数写到函数里边，最后返
     return array
   }
 
-  //输出数组的第1个元素
+  //输出数组的第1个元素  1210
   function head(array) {
     return array[0]
   }
 
-  //共3个参数，数组，value，fromIndex开始查询的位置（为负则从后往前查询）
+  //共3个参数，数组，value，fromIndex开始查询的位置（为负则从后往前查询）  1210
   function indexOf(array, value, fromIndex = 0) {
     //先从fromIndex的正负进行判断
 
@@ -150,7 +150,7 @@ var wangzhao2020 = function () {//将compace函数写到函数里边，最后返
     }
   }
 
-  //删除数组最后一个元素并返回
+  //删除数组最后一个元素并返回  1210
   function initial(array) {
     //使用循环，push到倒数第二个元素
     var result = []
@@ -160,7 +160,7 @@ var wangzhao2020 = function () {//将compace函数写到函数里边，最后返
     return result
   }
 
-  //将数组中的元素转为，用separator的字符串
+  //将数组中的元素转为，用separator的字符串  1210
   function join(array, separator) {
     //新建一个字符串，然后循环叠加数组元素和分隔符,最后一个元素不加分隔符
     var result = ''
@@ -170,13 +170,13 @@ var wangzhao2020 = function () {//将compace函数写到函数里边，最后返
     return result + array[i]
   }
 
-  //输出数组最后一个元素
+  //输出数组最后一个元素  1210
   function last(array) {
     //直接根据长度返回最后一个数组
     return array[array.length - 1]
   }
 
-  //类似于indexOf,区别是从后往前遍历
+  //类似于indexOf,区别是从后往前遍历  1210
   function lastIndexOf(array, value, fromIndex = array.length - 1) {
     //先从fromIndex的正负进行判断
 
@@ -201,7 +201,7 @@ var wangzhao2020 = function () {//将compace函数写到函数里边，最后返
     }
   }
 
-  //返回数组中的最大值，如果数组为空或假值返回underfined
+  //返回数组中的最大值，如果数组为空或假值返回underfined  1210
   function max(array) {
     //设置最大值，并循环数组元素进行对比，
     if (array.length == 0) {
@@ -218,6 +218,83 @@ var wangzhao2020 = function () {//将compace函数写到函数里边，最后返
   }
 
   //
+  // function maxBy(array, iteratee) {
+  //   //不会写，涉及到了对象和函数
+
+  // }
+
+  //
+  function min(array) {
+    //设置最小值，并循环数组元素进行对比，
+    if (array.length == 0) {
+      return undefined
+    }
+    var m = Infinity
+    for (var i = 0; i < array.length; i++) {
+      if (!array[i]) {
+        return undefined
+      }
+      m = (array[i] < m ? array[i] : m)
+    }
+    return m
+  }
+
+  //重复n次给定字符串
+  function repeat(string = '', n = 1) {
+    //1.先对字符串进行重复，字符串直接相加即可
+    var str = ''
+    for (var i = 0; i < n; i++) {
+      str += string
+    }
+    return str
+  }
+
+  //难度较高，先不做
+  // function map()
+
+  //创建新数组，将array与任何数组或值连接在一起
+  function concat(array, ...values) {
+    var ary = array.slice()  //等价于下面的函数
+    // var result = []
+    // for (var i = 0; i < array.length; i++){
+    //   result.push(array[i])
+    // }
+    //先判断values的长度，并对每个元素逐个判断
+    for (var i = 0; i < values.length; i++) {
+      var a = values[i]
+      if (typeof (a) == 'number') {//如果元素为数值，则直接push
+        ary.push(a)
+      } else if (Array.isArray(a)) {//如果元素为数组，则将数组的每个元素push到array后面
+
+        for (var j = 0; j < a.length; j++) {
+          ary.push(a[j])
+        }
+      }
+    }
+    return ary
+  }
+
+
+  //将数组嵌套层级减少1级
+  function flatten(array) {
+    //思路：使用扩展运算符，先让数组分开，然后然后将每个数组叠加
+    return [].concat(...array)
+  }
+  function flatten2(array) {//方法2
+    //思路：让array的每个元素，用concat进行连接
+    var result = []
+    for (var i = 0; i < array.length; i++) {
+      result = result.concat(array[i])  //concat 方法可以直接连接数组和字符串
+    }
+    return result
+  }
+  function flatten3(array) {//方法3
+    //思路：
+
+  }
+
+
+
 
 
   return {
@@ -241,6 +318,12 @@ var wangzhao2020 = function () {//将compace函数写到函数里边，最后返
     last,
     lastIndexOf,
     max,
+    min,
+    repeat,
+    flatten,
+    concat,
+
+
 
 
 
