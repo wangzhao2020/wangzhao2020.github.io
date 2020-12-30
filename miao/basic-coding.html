@@ -647,7 +647,7 @@
 </script>
 
 
-<script type="norun" id="ch0105/01">
+<script xtype="norun" id="ch0105/01">
 
   var n = Number(prompt('请输入学生人数'))
   var sum = 0
@@ -1818,7 +1818,7 @@
 
 </script>
 
-<script type="norun" id="ch0105/45">
+<script xtype="norun" id="ch0105/45">
 
   var d = Number(prompt())
   var sum = 0
@@ -1906,7 +1906,6 @@
   function bitWide(n) { //位宽：确定n是几位的数字
     let count = 0
     let digit
-
     do {  //需要考虑0和1 ，因此使用do while 即使是0 count也会计算一次 
       digit = n % 10
       n = (n - digit) / 10
@@ -1914,8 +1913,6 @@
     } while (n > 0)
     return count
   }
-
-
   function narcissistic(n) {
     let m = n       //n需要在最后进行比较，因此需要赋给m，让m进行计算
     let cube = 1    //多次幂的值
@@ -1938,11 +1935,6 @@
       return false
     }
   }
-
-
-
-
-
 
 
 </script>

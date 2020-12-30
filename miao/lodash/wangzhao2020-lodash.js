@@ -20,7 +20,7 @@ var wangzhao2020 = function () {//将compace函数写到函数里边，最后返
     //新建两个数组，第一个数组根据长度进行push，第二个数组根据长度差值进行push
     var result = []
 
-    for (var i = 0; i <= array.length; i += size) {//使用数组的slice方法，每隔size取对应范围的数组并push到新的数组result
+    for (var i = 0; i < array.length; i += size) {//使用数组的slice方法，每隔size取对应范围的数组并push到新的数组result
       result.push(array.slice(i, size + i))
     }
     return result
